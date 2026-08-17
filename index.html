@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Node Cash · Identidad de marca</title>
+<meta name="description" content="Identidad de marca de Node Cash: el monograma N como grafo convergente, la paleta Deep sea + teal, la tipografía, la voz y las reglas de uso.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#0D1321" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ECF1F7" media="(prefers-color-scheme: light)">
+
+<meta property="og:title" content="Node Cash · Identidad de marca">
+<meta property="og:description" content="N tarjetas más los fijos entrando a un solo punto. El nombre describe el diferenciador.">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/identidad.css">
+<script src="assets/js/tema.js"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     La marca vive una sola vez, como <symbol>, y se reusa en cada
+     tamaño y apariencia. Los colores entran por var() en atributo
+     de presentación: es lo único que hereda de forma confiable
+     dentro de <use>. Cambiar la marca es cambiar esto y nada más.
+     ═══════════════════════════════════════════════════════════ -->
+<svg width="0" height="0" class="defs" aria-hidden="true" focusable="false">
+  <!-- Monograma N · marca completa -->
+  <symbol id="marca" viewBox="0 0 1024 1024">
+    <path d="M300,264 L 300,760" fill="none" stroke="var(--linea)" stroke-width="56" stroke-linecap="round"/>
+    <path d="M300,264 L 724,760" fill="none" stroke="var(--linea)" stroke-width="56" stroke-linecap="round"/>
+    <path d="M724,264 L 724,760" fill="none" stroke="var(--linea)" stroke-width="56" stroke-linecap="round"/>
+    <circle cx="300" cy="264" r="64" fill="var(--linea)"/>
+    <circle cx="300" cy="760" r="64" fill="var(--linea)"/>
+    <circle cx="724" cy="264" r="64" fill="var(--linea)"/>
+    <circle cx="724" cy="760" r="64" fill="var(--nodo)"/>
+  </symbol>
+
+  <!-- Capa 1 · las aristas (los enlaces) -->
+  <symbol id="capa-aristas" viewBox="0 0 1024 1024">
+    <path d="M300,264 L 300,760" fill="none" stroke="var(--linea)" stroke-width="56" stroke-linecap="round"/>
+    <path d="M300,264 L 724,760" fill="none" stroke="var(--linea)" stroke-width="56" stroke-linecap="round"/>
+    <path d="M724,264 L 724,760" fill="none" stroke="var(--linea)" stroke-width="56" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Capa 2 · los nodos (los vértices) -->
+  <symbol id="capa-nodos" viewBox="0 0 1024 1024">
+    <circle cx="300" cy="264" r="64" fill="var(--linea)"/>
+    <circle cx="300" cy="760" r="64" fill="var(--linea)"/>
+    <circle cx="724" cy="264" r="64" fill="var(--linea)"/>
+    <circle cx="724" cy="760" r="64" fill="var(--nodo)"/>
+  </symbol>
+
+  <!-- Construcción · la marca con su retícula y sus medidas -->
+  <symbol id="marca-construccion" viewBox="0 0 1024 1024">
+    <g stroke="var(--guia)" stroke-width="2" fill="none">
+      <rect x="152" y="152" width="720" height="720" rx="8"/>
+      <line x1="300" y1="120" x2="300" y2="904"/>
+      <line x1="724" y1="120" x2="724" y2="904"/>
+      <line x1="120" y1="264" x2="904" y2="264"/>
+      <line x1="120" y1="760" x2="904" y2="760"/>
+      <line x1="120" y1="512" x2="904" y2="512" stroke-dasharray="10 12"/>
+    </g>
+    <path d="M300,264 L 300,760" fill="none" stroke="var(--linea)" stroke-width="56" stroke-linecap="round"/>
+    <path d="M300,264 L 724,760" fill="none" stroke="var(--linea)" stroke-width="56" stroke-linecap="round"/>
+    <path d="M724,264 L 724,760" fill="none" stroke="var(--linea)" stroke-width="56" stroke-linecap="round"/>
+    <circle cx="300" cy="264" r="64" fill="var(--linea)"/>
+    <circle cx="300" cy="760" r="64" fill="var(--linea)"/>
+    <circle cx="724" cy="264" r="64" fill="var(--linea)"/>
+    <circle cx="724" cy="760" r="64" fill="var(--nodo)"/>
+    <g fill="var(--guia-texto)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="30">
+      <text x="512" y="130" text-anchor="middle">1024 × 1024</text>
+      <text x="140" y="230" text-anchor="start">y 264</text>
+      <text x="140" y="812" text-anchor="start">y 760</text>
+      <text x="300" y="940" text-anchor="middle">x 300</text>
+      <text x="724" y="940" text-anchor="middle">x 724</text>
+    </g>
+  </symbol>
+</svg>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<nav class="barra" aria-label="Secciones">
+  <div class="barra-in">
+    <a class="barra-marca" href="#contenido">
+      <span class="tile tile--nav"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
+      <b>Node Cash</b>
+      <span class="barra-sub">identidad</span>
+    </a>
+    <div class="barra-links">
+      <a href="#concepto">Concepto</a>
+      <a href="#marca-sec">Marca</a>
+      <a href="#apariencias">Apariencias</a>
+      <a href="#capas">Capas</a>
+      <a href="#paleta">Paleta</a>
+      <a href="#tipografia">Tipografía</a>
+      <a href="#voz">Voz</a>
+      <a href="#uso">Uso</a>
+    </div>
+    <button class="tema" type="button" data-tema-toggle aria-label="Cambiar entre modo claro y oscuro">
+      <span data-tema-texto>Oscuro</span>
+    </button>
+  </div>
+</nav>
+
+<div class="wrap" id="contenido">
+
+  <header class="mast">
+    <span class="tag">Node Cash · identidad de marca · agosto 2026</span>
+    <h1>El nombre deja de ser decorativo:<br><em>N nodos que entran a un solo punto.</em></h1>
+    <p class="lede">
+      <code>Docs/06plandesalida.md</code> daba «Node» por vacío — <em>«no comunica nada sobre dinero
+      comprometido»</em> — y recomendaba no cambiarlo, sino construir la marca sobre los conceptos.
+      Esta hoja hace exactamente eso: <b>N tarjetas más los fijos entran a un solo punto</b>, que es
+      la frase con la que <code>Docs/07curva.md</code> justifica el producto entero. Eso es un grafo
+      convergente. El monograma es esa frase dibujada.
+    </p>
+
+    <div class="hero">
+      <span class="tile tile--hero sombra"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
+      <div class="hero-txt">
+        <span class="tag tag--acento">La marca</span>
+        <h2>Monograma N</h2>
+        <p>
+          Hace tres trabajos con una sola forma: <b>es la letra del nombre</b>, <b>es literalmente un
+          grafo</b> —cuatro vértices, tres aristas— y <b>el vértice de llegada va en acento</b>, que es
+          el punto único al que todo converge.
+        </p>
+        <p>
+          Y gana la prueba dura: sigue legible a <span class="num">29 px</span> y sobrevive en escala de
+          grises, que es como iOS lo muestra en modo <em>tinted</em>. Un ícono que solo funciona a color
+          no funciona.
+        </p>
+      </div>
+    </div>
+
+    <div class="meta">
+      <div>Marca <b>Monograma N</b></div>
+      <div>Paleta <b>Deep sea + teal</b></div>
+      <div>Fuente de color <b>Colores.swift</b></div>
+      <div>Lienzo <b class="num">1024 × 1024</b></div>
+      <div>Destino <b>Icon Composer</b></div>
+    </div>
+  </header>
+
+  <!-- ── 01 · concepto ─────────────────────────────────────── -->
+  <section id="concepto">
+    <div class="shead">
+      <span class="tag">01</span>
+      <h2>Una sola curva, no una por tarjeta</h2>
+    </div>
+    <p class="snote">
+      El argumento ya estaba escrito, sin usar la palabra «nodo», en <code>Docs/07curva.md</code> §1.
+      Es la decisión de producto que da origen a todo lo demás.
+    </p>
+
+    <blockquote class="cita">
+      <p class="cita-titulo">«Una sola curva, no una por tarjeta»</p>
+      <ul class="razones">
+        <li>
+          <b>El ingreso es uno solo.</b>
+          No existe «ingreso de BBVA». Una curva por tarjeta no tendría contra qué compararse, y sin
+          línea de referencia deja de decir si aguantas o no.
+        </li>
+        <li>
+          <b>El muro es un fenómeno de la suma.</b>
+          Aparece cuando el total rebasa el ingreso, sin importar de qué tarjeta venga cada pago.
+          Tres curvas separadas pueden verse todas bien mientras juntas te ahogan.
+        </li>
+        <li>
+          <b>La vista consolidada es el diferenciador.</b>
+          La app del banco ya muestra su propia tarjeta. Nadie muestra el conjunto.
+        </li>
+      </ul>
+      <cite>Docs/07curva.md §1</cite>
+    </blockquote>
+
+    <p class="parrafo">
+      <b>Eso es exactamente convergencia de nodos:</b> N tarjetas más los fijos entrando a un solo
+      punto. Leído así, el nombre deja de ser decorativo y pasa a describir el diferenciador del
+      producto — no lo que la app hace, sino lo que ninguna otra hace.
+    </p>
+
+    <figure class="diagrama">
+      <svg viewBox="0 0 760 268" role="img" aria-labelledby="diag-titulo">
+        <title id="diag-titulo">N tarjetas más los gastos fijos convergiendo en un solo punto</title>
+        <g fill="none" stroke="var(--linea-diagrama)" stroke-width="3">
+          <path d="M148,40  C 300,40  360,134 512,134"/>
+          <path d="M148,87  C 300,87  360,134 512,134"/>
+          <path d="M148,134 L 512,134"/>
+          <path d="M148,181 C 300,181 360,134 512,134"/>
+          <path d="M148,228 C 300,228 360,134 512,134"/>
+        </g>
+        <g class="diag-etiquetas" text-anchor="end">
+          <text x="120" y="45">Tarjeta 1</text>
+          <text x="120" y="92">Tarjeta 2</text>
+          <text x="120" y="139">Tarjeta 3</text>
+          <text x="120" y="186">Tarjeta N</text>
+          <text x="120" y="233">Gastos fijos</text>
+        </g>
+        <circle cx="148" cy="40"  r="11" fill="var(--t-azul)"/>
+        <circle cx="148" cy="87"  r="11" fill="var(--t-morado)"/>
+        <circle cx="148" cy="134" r="11" fill="var(--t-coral)"/>
+        <circle cx="148" cy="181" r="11" fill="var(--t-verde)"/>
+        <circle cx="148" cy="228" r="11" fill="var(--neutro)"/>
+        <circle cx="512" cy="134" r="26" fill="var(--acento)"/>
+        <g class="diag-etiquetas diag-destino" text-anchor="start">
+          <text x="556" y="128">Un solo número</text>
+          <text x="556" y="152" class="diag-tenue">tu mes, consolidado</text>
+        </g>
+      </svg>
+      <figcaption>
+        El grafo del producto. La marca es este dibujo comprimido hasta que cabe en una letra.
+      </figcaption>
+    </figure>
+
+    <div class="tres">
+      <article>
+        <span class="tag">Lo que significa la forma</span>
+        <h3>Los nodos de paso</h3>
+        <p>Los tres vértices en color de trazo son lo que entra: cada tarjeta y el bloque de fijos.
+           Son iguales entre sí porque en la curva ninguno manda sobre otro.</p>
+      </article>
+      <article>
+        <span class="tag">Lo que significa la forma</span>
+        <h3>La diagonal</h3>
+        <p>El trazo que baja de arriba-izquierda a abajo-derecha es el paso del tiempo: los meses en
+           los que ese compromiso ya está vendido.</p>
+      </article>
+      <article>
+        <span class="tag">Lo que significa la forma</span>
+        <h3>El nodo de llegada</h3>
+        <p>Va en acento y es el único foco del ícono. Es el punto donde la suma ocurre — el número que
+           la app existe para mostrar.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── 02 · marca ────────────────────────────────────────── -->
+  <section id="marca-sec">
+    <div class="shead">
+      <span class="tag">02</span>
+      <h2>La marca y su construcción</h2>
+    </div>
+    <p class="snote">
+      Toda la geometría vive en un lienzo de <span class="num">1024 × 1024</span>, que es el que pide
+      Icon Composer. Las medidas son absolutas en ese lienzo: escalar la marca es escalar el lienzo
+      completo, nunca mover una coordenada.
+    </p>
+
+    <div class="construccion">
+      <span class="tile tile--construccion sombra"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca-construccion"/></svg></span>
+      <div class="tabla">
+        <table>
+          <caption class="visualmente-oculto">Medidas de construcción del monograma</caption>
+          <thead>
+            <tr><th>Elemento</th><th>Medida</th><th>Por qué</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Lienzo</b></td>
+              <td class="hexcel">1024 × 1024</td>
+              <td>El que consume Icon Composer y el PNG que App Store Connect pide aparte</td>
+            </tr>
+            <tr>
+              <td><b>Área viva</b></td>
+              <td class="hexcel">720 × 720</td>
+              <td>Deja el margen que el recorte de esquinas de iOS se come sin tocar la letra</td>
+            </tr>
+            <tr>
+              <td><b>Grosor de arista</b></td>
+              <td class="hexcel">56</td>
+              <td>Por debajo de ~40 el brillo especular de iOS 26 se come el trazo</td>
+            </tr>
+            <tr>
+              <td><b>Radio de nodo</b></td>
+              <td class="hexcel">64</td>
+              <td>Suficiente para leerse como punto, no como engrosamiento del trazo</td>
+            </tr>
+            <tr>
+              <td><b>Vértices</b></td>
+              <td class="hexcel">300,264 · 300,760<br>724,264 · <b>724,760</b></td>
+              <td>El cuarto —abajo a la derecha— es el de llegada y el único en acento</td>
+            </tr>
+            <tr>
+              <td><b>Terminaciones</b></td>
+              <td class="hexcel">round</td>
+              <td>Redondas en punta y en unión: la letra no debe leerse como flecha ni como tachadura</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 03 · apariencias ──────────────────────────────────── -->
+  <section id="apariencias">
+    <div class="shead">
+      <span class="tag">03</span>
+      <h2>Las cuatro apariencias</h2>
+      <span class="tag tag--suave">iOS 26 · un solo juego de capas</span>
+    </div>
+    <p class="snote">
+      iOS 26 no pide cuatro dibujos: pide <b>un juego de capas y cuatro tratamientos</b>. Lo único que
+      hay que decidir a mano es la versión clara, porque la app se diseñó entera en oscuro
+      (<code>Docs/08rutaalanzamiento.md</code>) — abajo va resuelta con los valores de modo claro de
+      <code>Colores.swift</code>: <code>0x121B2B</code> para el trazo y <code>0x007F71</code> para el
+      nodo de acento.
+    </p>
+    <div class="apar">
+      <figure>
+        <span class="tile tile--96 sombra"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
+        <figcaption>Default</figcaption>
+      </figure>
+      <figure>
+        <span class="tile tile--96 tile--claro sombra"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
+        <figcaption>Claro</figcaption>
+      </figure>
+      <figure>
+        <span class="tile tile--96 tile--tinted sombra"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
+        <figcaption>Tinted</figcaption>
+      </figure>
+      <figure>
+        <span class="sobrefondo"><span class="tile tile--96 tile--cristal"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span></span>
+        <figcaption>Cristal</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="sub">La prueba a tamaño real</h3>
+    <p class="snote">
+      <span class="num">60 pt</span> es el tamaño del ícono en la pantalla de inicio del iPhone, entre
+      íconos vecinos. <b>Aquí es donde se decide.</b> Un ícono se elige mirándolo a este tamaño, no al
+      de la presentación.
+    </p>
+    <div class="prueba">
+      <div class="pantalla pantalla--osc">
+        <span class="tag">Fondo oscuro</span>
+        <div class="fila">
+          <div class="app"><span class="app--otra" style="background:linear-gradient(160deg,#34C759,#248A3D)">◷</span><span>Salud</span></div>
+          <div class="app"><span class="tile"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span><span>Node Cash</span></div>
+          <div class="app"><span class="app--otra" style="background:linear-gradient(160deg,#5E5CE6,#3634A3)">♫</span><span>Música</span></div>
+          <div class="app"><span class="app--otra" style="background:linear-gradient(160deg,#FF9F0A,#C77700)">◐</span><span>Fotos</span></div>
+        </div>
+      </div>
+      <div class="pantalla pantalla--cla">
+        <span class="tag">Modo tinted (escala de grises)</span>
+        <div class="fila">
+          <div class="app"><span class="app--otra" style="background:linear-gradient(160deg,#8E8E93,#5A5A5F)">◷</span><span>Salud</span></div>
+          <div class="app"><span class="tile tile--tinted"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span><span>Node Cash</span></div>
+          <div class="app"><span class="app--otra" style="background:linear-gradient(160deg,#8E8E93,#5A5A5F)">♫</span><span>Música</span></div>
+          <div class="app"><span class="app--otra" style="background:linear-gradient(160deg,#8E8E93,#5A5A5F)">◐</span><span>Fotos</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="escala">
+      <figure><span class="tile tile--60"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span><figcaption>60 pt</figcaption></figure>
+      <figure><span class="tile tile--40"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span><figcaption>40 pt</figcaption></figure>
+      <figure><span class="tile tile--29"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span><figcaption>29 pt</figcaption></figure>
+      <figure><span class="tile tile--29 tile--tinted"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span><figcaption>29 pt · gris</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- ── 04 · capas ────────────────────────────────────────── -->
+  <section id="capas">
+    <div class="shead">
+      <span class="tag">04</span>
+      <h2>Anatomía de capas</h2>
+      <span class="tag tag--suave">lo que Icon Composer recibe</span>
+    </div>
+    <p class="snote">
+      Tres capas, no un dibujo. Icon Composer aplica el brillo especular, la sombra y la translucidez
+      <b>por capa</b>, así que una marca aplanada pierde todo el tratamiento de Liquid Glass.
+    </p>
+
+    <div class="capas-fila">
+      <figure>
+        <span class="tile tile--104"><svg viewBox="0 0 1024 1024" aria-hidden="true"></svg></span>
+        <figcaption>0 · fondo<br>degradado</figcaption>
+      </figure>
+      <span class="mas" aria-hidden="true">+</span>
+      <figure>
+        <span class="tile tile--104 capa-sola"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#capa-aristas"/></svg></span>
+        <figcaption>1 · aristas<br>los enlaces</figcaption>
+      </figure>
+      <span class="mas" aria-hidden="true">+</span>
+      <figure>
+        <span class="tile tile--104 capa-sola"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#capa-nodos"/></svg></span>
+        <figcaption>2 · nodos<br>los puntos</figcaption>
+      </figure>
+      <span class="mas" aria-hidden="true">=</span>
+      <figure>
+        <span class="tile tile--104 sombra"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
+        <figcaption>la marca</figcaption>
+      </figure>
+    </div>
+
+    <div class="tabla">
+      <table>
+        <thead>
+          <tr><th>Capa</th><th>Contenido</th><th>Oscuro</th><th>Claro</th><th>Token</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>0 · fondo</b></td>
+            <td>Degradado del lienzo completo. No recibe tratamiento de vidrio: es el suelo</td>
+            <td class="hexcel"><span class="chip" style="background:#1D2D44"></span>#1D2D44<br><span class="chip" style="background:#0D1321"></span>#0D1321</td>
+            <td class="hexcel"><span class="chip" style="background:#FFFFFF"></span>#FFFFFF<br><span class="chip" style="background:#ECF1F7"></span>#ECF1F7</td>
+            <td class="hexcel">superficie<br>fondo</td>
+          </tr>
+          <tr>
+            <td><b>1 · aristas</b></td>
+            <td>Los tres enlaces de la N. Grosor <span class="num">56</span> a escala 1024</td>
+            <td class="hexcel"><span class="chip" style="background:#F2F5FA"></span>#F2F5FA</td>
+            <td class="hexcel"><span class="chip" style="background:#121B2B"></span>#121B2B</td>
+            <td class="hexcel">texto</td>
+          </tr>
+          <tr>
+            <td><b>2 · nodos</b></td>
+            <td>Los cuatro vértices. Solo el de llegada va en acento: es el único foco</td>
+            <td class="hexcel"><span class="chip" style="background:#F2F5FA"></span>#F2F5FA<br><span class="chip" style="background:#00A896"></span>#00A896</td>
+            <td class="hexcel"><span class="chip" style="background:#121B2B"></span>#121B2B<br><span class="chip" style="background:#007F71"></span>#007F71</td>
+            <td class="hexcel">texto<br>acento</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── 05 · paleta ───────────────────────────────────────── -->
+  <section id="paleta">
+    <div class="shead">
+      <span class="tag">05</span>
+      <h2>Paleta · Deep sea + teal</h2>
+      <span class="tag tag--suave">fuente única: Colores.swift</span>
+    </div>
+    <p class="snote">
+      Ninguna vista usa un color literal: todo pasa por <code>Token</code>, <b>nombrado por rol, nunca
+      por color</b>. Claro y oscuro se resuelven solos vía <code>UITraitCollection</code>. Esta página
+      es la misma paleta puesta en HTML — si un valor cambia en <code>Colores.swift</code>, cambia aquí.
+    </p>
+
+    <h3 class="sub">Base, texto y acento</h3>
+    <div class="tabla">
+      <table>
+        <thead>
+          <tr><th>Token</th><th>Papel</th><th>Claro</th><th>Oscuro</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>fondo</code></td><td>El suelo de cada pantalla</td><td class="hexcel"><span class="chip" style="background:#ECF1F7"></span>#ECF1F7</td><td class="hexcel"><span class="chip" style="background:#0D1321"></span>#0D1321</td></tr>
+          <tr><td><code>superficie</code></td><td>Tarjetas y bloques sobre el fondo</td><td class="hexcel"><span class="chip" style="background:#F8FAFD"></span>#F8FAFD</td><td class="hexcel"><span class="chip" style="background:#1D2D44"></span>#1D2D44</td></tr>
+          <tr><td><code>superficieElevada</code></td><td>Hojas, menús, lo que flota</td><td class="hexcel"><span class="chip" style="background:#FFFFFF"></span>#FFFFFF</td><td class="hexcel"><span class="chip" style="background:#243452"></span>#243452</td></tr>
+          <tr><td><code>texto</code></td><td>Todo lo que se lee de primera</td><td class="hexcel"><span class="chip" style="background:#121B2B"></span>#121B2B</td><td class="hexcel"><span class="chip" style="background:#F2F5FA"></span>#F2F5FA</td></tr>
+          <tr><td><code>textoSecundario</code></td><td>Apoyo, unidades, notas al pie</td><td class="hexcel"><span class="chip" style="background:#51677E"></span>#51677E</td><td class="hexcel"><span class="chip" style="background:#8FA5C0"></span>#8FA5C0</td></tr>
+          <tr><td><code>separador</code></td><td>Línea divisoria discreta. <b>25 % en claro, 55 % en oscuro</b>: el mismo alfa sobre blanco se ve como línea dura</td><td class="hexcel"><span class="chip" style="background:rgba(62,92,118,.25)"></span>#3E5C76 · 25 %</td><td class="hexcel"><span class="chip" style="background:rgba(62,92,118,.55)"></span>#3E5C76 · 55 %</td></tr>
+          <tr class="fila--destacada"><td><code>acento</code></td><td>El teal de la marca. Un solo acento en pantalla</td><td class="hexcel"><span class="chip" style="background:#007F71"></span>#007F71</td><td class="hexcel"><span class="chip" style="background:#00A896"></span>#00A896</td></tr>
+          <tr><td><code>sobreAcento</code></td><td>Va <b>siempre</b> encima de <code>acento</code> — nunca blanco fijo, que no pasa contraste sobre el teal claro</td><td class="hexcel"><span class="chip" style="background:#FFFFFF"></span>#FFFFFF</td><td class="hexcel"><span class="chip" style="background:#0D1321"></span>#0D1321</td></tr>
+          <tr><td><code>acentoSuave</code></td><td>Relleno de píldoras y estados seleccionados</td><td class="hexcel"><span class="chip" style="background:rgba(0,127,113,.12)"></span>#007F71 · 12 %</td><td class="hexcel"><span class="chip" style="background:rgba(0,168,150,.20)"></span>#00A896 · 20 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Estados</h3>
+    <p class="snote">
+      <code>alerta</code> está <b>reservado</b>: ningún color de tarjeta puede parecérsele. Es lo que
+      causaba que la franja de una tarjeta y una píldora de alerta se confundieran.
+    </p>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Token</th><th>Papel</th><th>Claro</th><th>Oscuro</th></tr></thead>
+        <tbody>
+          <tr><td><code>alerta</code></td><td>El muro, los meses que rebasan</td><td class="hexcel"><span class="chip" style="background:#8B4B08"></span>#8B4B08</td><td class="hexcel"><span class="chip" style="background:#FFA92E"></span>#FFA92E</td></tr>
+          <tr><td><code>peligro</code></td><td>Destructivo y errores</td><td class="hexcel"><span class="chip" style="background:#C5313A"></span>#C5313A</td><td class="hexcel"><span class="chip" style="background:#FF5A5F"></span>#FF5A5F</td></tr>
+          <tr><td><code>exito</code></td><td>Liberaciones, pagos completados</td><td class="hexcel"><span class="chip" style="background:#1B8152"></span>#1B8152</td><td class="hexcel"><span class="chip" style="background:#3DDC84"></span>#3DDC84</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Decorativos · la curva</h3>
+    <div class="tabla">
+      <table>
+        <thead><tr><th>Token</th><th>Papel</th><th>Claro</th><th>Oscuro</th></tr></thead>
+        <tbody>
+          <tr><td><code>neutro</code></td><td>Series sin identidad propia</td><td class="hexcel"><span class="chip" style="background:#5C7A99"></span>#5C7A99</td><td class="hexcel"><span class="chip" style="background:#3E5C76"></span>#3E5C76</td></tr>
+          <tr><td><code>fijos</code></td><td>La base de la curva: lo inamovible</td><td class="hexcel"><span class="chip" style="background:rgba(62,92,118,.65)"></span>#3E5C76 · 65 %</td><td class="hexcel"><span class="chip" style="background:rgba(62,92,118,.85)"></span>#3E5C76 · 85 %</td></tr>
+          <tr><td><code>finDefinido</code></td><td>Pagos con fin definido fuera de tarjeta</td><td class="hexcel"><span class="chip" style="background:rgba(116,140,171,.55)"></span>#748CAB · 55 %</td><td class="hexcel"><span class="chip" style="background:rgba(116,140,171,.80)"></span>#748CAB · 80 %</td></tr>
+          <tr><td><code>pistaBarra</code></td><td>Canal vacío de una barra de progreso</td><td class="hexcel"><span class="chip" style="background:rgba(62,92,118,.18)"></span>#3E5C76 · 18 %</td><td class="hexcel"><span class="chip" style="background:rgba(62,92,118,.42)"></span>#3E5C76 · 42 %</td></tr>
+          <tr><td><code>rejilla</code></td><td>Líneas guía de la gráfica</td><td class="hexcel"><span class="chip" style="background:rgba(81,103,126,.16)"></span>#51677E · 16 %</td><td class="hexcel"><span class="chip" style="background:rgba(116,140,171,.20)"></span>#748CAB · 20 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="sub">Colores de tarjeta</h3>
+    <p class="snote">
+      El tinte de una tarjeta es su color al <b>22 %</b> sobre <code>superficie</code>, más una franja
+      lateral sólida de <span class="num">5 pt</span> — <b>nunca color sólido de fondo completo</b>.
+      Es la atribución por color dentro de la misma gráfica de la que habla <code>07curva.md</code>.
+      En cada muestra, la mitad izquierda es el valor de <b>modo claro</b> y la derecha el de
+      <b>modo oscuro</b>.
+    </p>
+    <div class="muestras">
+      <figure><span class="muestra" style="--m-claro:#1C6FC9; --m-oscuro:#52A5EB"></span><figcaption><b>azul</b><span class="num">#1C6FC9 · #52A5EB</span></figcaption></figure>
+      <figure><span class="muestra" style="--m-claro:#C5313A; --m-oscuro:#FF5A5F"></span><figcaption><b>rojo</b><span class="num">#C5313A · #FF5A5F</span></figcaption></figure>
+      <figure><span class="muestra" style="--m-claro:#8E3FD1; --m-oscuro:#BE6EF5"></span><figcaption><b>morado</b><span class="num">#8E3FD1 · #BE6EF5</span></figcaption></figure>
+      <figure><span class="muestra" style="--m-claro:#C1502F; --m-oscuro:#E8735C"></span><figcaption><b>coral</b><span class="num">#C1502F · #E8735C</span></figcaption></figure>
+      <figure><span class="muestra" style="--m-claro:#8A7415; --m-oscuro:#E8D97A"></span><figcaption><b>amarillo</b><span class="num">#8A7415 · #E8D97A</span></figcaption></figure>
+      <figure><span class="muestra" style="--m-claro:#4C7A2E; --m-oscuro:#7A9D4F"></span><figcaption><b>verde</b><span class="num">#4C7A2E · #7A9D4F</span></figcaption></figure>
+      <figure><span class="muestra" style="--m-claro:#AD3E76; --m-oscuro:#E0629E"></span><figcaption><b>rosa</b><span class="num">#AD3E76 · #E0629E</span></figcaption></figure>
+      <figure><span class="muestra" style="--m-claro:#3C3942; --m-oscuro:#4A4750"></span><figcaption><b>negro</b><span class="num">#3C3942 · #4A4750</span></figcaption></figure>
+      <figure><span class="muestra" style="--m-claro:#6B6F76; --m-oscuro:#9B9B9B"></span><figcaption><b>gris</b><span class="num">#6B6F76 · #9B9B9B</span></figcaption></figure>
+    </div>
+    <p class="nota">
+      Dos anotaciones que vienen del propio <code>Colores.swift</code> y no se pueden perder de vista:
+      <b>rojo de tarjeta comparte hex con <code>peligro</code></b> —una tarjeta roja puede leerse como
+      «peligro»— y <b>coral reemplazó al antiguo naranja</b>, porque un naranja real es indistinguible
+      de <code>alerta</code>.
+    </p>
+  </section>
+
+  <!-- ── 06 · tipografía ───────────────────────────────────── -->
+  <section id="tipografia">
+    <div class="shead">
+      <span class="tag">06</span>
+      <h2>Tipografía y números</h2>
+    </div>
+    <p class="snote">
+      Tipografía del sistema a propósito: San Francisco en la app, la del sistema en web. El ícono y los
+      textos van a vivir junto a etiquetas en SF, y probar la marca en otra fuente sería probarla en
+      condiciones falsas.
+    </p>
+    <div class="dos">
+      <article class="ficha-txt">
+        <h3>Jerarquía</h3>
+        <ul class="lista">
+          <li><b>Títulos</b> — SF, peso semibold, <em>tracking</em> negativo. Nunca en mayúsculas completas.</li>
+          <li><b>Cuerpo</b> — SF regular. Frases cortas y en español; ningún término en inglés mezclado.</li>
+          <li><b>Etiquetas</b> — monoespaciada, versalitas, <em>tracking</em> abierto. Es la voz de los metadatos: fechas, folios, «parcialidad 4 de 12».</li>
+        </ul>
+      </article>
+      <article class="ficha-txt">
+        <h3>Números</h3>
+        <ul class="lista">
+          <li><b>Cifras tabulares siempre.</b> Una columna de montos que baila al actualizarse destruye la sensación de exactitud.</li>
+          <li><b>Formato es_MX, moneda MXN</b> (<code>Dinero+Formato.swift</code>). Las fechas, también en es_MX.</li>
+          <li><b>El dinero es <code>Int</code> en centavos.</b> Nunca <code>Double</code>. Es invariante del motor, no una preferencia de estilo.</li>
+          <li><b>Ante la duda, se redondea en contra del usuario.</b> Sorprender con deuda que no se veía, desinstala.</li>
+        </ul>
+      </article>
+    </div>
+    <div class="muestra-num">
+      <div><span class="tag">Monto</span><b class="num grande">$19,950.00</b></div>
+      <div><span class="tag">Parcialidad</span><b class="num grande">4 de 12</b></div>
+      <div><span class="tag">Corte</span><b class="num grande">17 ago 2026</b></div>
+      <div><span class="tag">Muro</span><b class="num grande alerta">+$950.00</b></div>
+    </div>
+  </section>
+
+  <!-- ── 07 · voz ──────────────────────────────────────────── -->
+  <section id="voz">
+    <div class="shead">
+      <span class="tag">07</span>
+      <h2>Voz y vocabulario</h2>
+    </div>
+    <p class="snote">
+      El tono del producto y el del contenido tienen que ser el mismo: si el video regaña y la app no,
+      la marca se parte en dos.
+    </p>
+
+    <div class="lockup">
+      <span class="tile tile--lockup"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
+      <div class="lockup-txt">
+        <h3>Node Cash</h3>
+        <p>cuánto de tu futuro ya está vendido</p>
+      </div>
+    </div>
+    <p class="nota">
+      El <em>lockup</em> es marca + nombre + tagline, en ese orden. El tagline permanente viene de
+      <code>Docs/06plandesalida.md</code> y no se toca: es el que hace en español todo el trabajo que
+      el nombre en inglés no hace.
+    </p>
+
+    <h3 class="sub">Las dos palabras propietarias</h3>
+    <div class="dos">
+      <article class="ficha-txt">
+        <span class="tag tag--acento">Activo de marca 1</span>
+        <h3>La curva</h3>
+        <p>La gráfica que en dos segundos muestra algo que el espectador nunca ha visto de su propio
+           dinero. Es el activo visual del producto y la pantalla que se comparte.</p>
+      </article>
+      <article class="ficha-txt">
+        <span class="tag tag--acento">Activo de marca 2</span>
+        <h3>El muro</h3>
+        <p>El mes donde varios MSI coinciden y se satura la capacidad de pago. La meta de marca a 90
+           días es que alguien escriba <b>«mi muro es en marzo»</b> sin explicar qué significa.</p>
+      </article>
+    </div>
+
+    <div class="tres">
+      <article class="veredicto veredicto--si">
+        <span class="tag">Se dice así</span>
+        <p class="frase">«Octubre rebasa tu ingreso por $950»</p>
+        <p>Un hecho con su número. El usuario decide qué hacer con él.</p>
+      </article>
+      <article class="veredicto veredicto--no">
+        <span class="tag">Nunca así</span>
+        <p class="frase">«Cuidado con tus gastos»</p>
+        <p>Moraliza y no aporta ningún dato. La app informa, nunca regaña ni bloquea.</p>
+      </article>
+      <article class="veredicto">
+        <span class="tag">La frase de campaña</span>
+        <p class="frase">«El Buen Fin no cuesta $12,000. Cuesta $1,000 al mes hasta noviembre del año que entra.»</p>
+        <p>El contenido no es sobre la app: es sobre el cálculo.</p>
+      </article>
+    </div>
+
+    <ul class="reglas">
+      <li><b>Nunca moralizar.</b> Los MSI no son el enemigo: la ceguera lo es.</li>
+      <li><b>Nunca prometer rendimiento, ahorro garantizado ni asesoría financiera.</b> Node Cash hace aritmética, no recomendaciones de inversión.</li>
+      <li><b>Aritmética antes que opinión.</b> El diferencial es que los números salen bien.</li>
+      <li><b>Todo en español.</b> Interfaz, textos, código y esta hoja. Ningún nombre en inglés mezclado.</li>
+      <li><b>Todo número debe poder reconstruirse desde las líneas visibles.</b> Si un componente participa en el resultado, se muestra.</li>
+    </ul>
+  </section>
+
+  <!-- ── 08 · uso ──────────────────────────────────────────── -->
+  <section id="uso">
+    <div class="shead">
+      <span class="tag">08</span>
+      <h2>Reglas de uso</h2>
+    </div>
+
+    <div class="dos">
+      <article class="ficha-txt ficha--si">
+        <h3>Sí</h3>
+        <ul class="lista">
+          <li>Un solo nodo en acento, siempre el de llegada.</li>
+          <li>Área libre alrededor de la marca de al menos el radio de un nodo.</li>
+          <li>Tamaño mínimo del monograma suelto: <span class="num">24 px</span>. Debajo de eso, solo dentro del ícono con su fondo.</li>
+          <li>Sobre foto o color, la marca va dentro de su recuadro con fondo propio.</li>
+        </ul>
+      </article>
+      <article class="ficha-txt ficha--no">
+        <h3>No</h3>
+        <ul class="lista">
+          <li>No estirar, inclinar ni rotar: la diagonal es una medida, no un adorno.</li>
+          <li>No recolorear los nodos con colores de tarjeta ni poner más de uno en acento.</li>
+          <li>No rellenar el interior de la N ni añadirle contorno.</li>
+          <li>No añadir sombra al trazo: la profundidad la pone Icon Composer por capa.</li>
+          <li>No usar la marca sola como logotipo sin el nombre en contextos donde nadie la conoce todavía.</li>
+        </ul>
+      </article>
+    </div>
+
+    <h3 class="sub">Ruta a Icon Composer</h3>
+    <p class="snote">
+      Hoy <code>Assets.xcassets/AppIcon.appiconset/Contents.json</code> es el placeholder vacío de
+      Xcode: tres slots de <span class="num">1024</span> sin <code>filename</code>. No hay ícono.
+      Estos son los pasos, en orden, para que sí lo haya.
+    </p>
+    <ol class="pasos">
+      <li><b>Documento iOS nuevo en Icon Composer.</b> Arrastra las capas en orden: <code>0-fondo</code>, <code>1-aristas</code>, <code>2-nodos</code>.</li>
+      <li><b>Ajusta por apariencia</b> — Default, Dark, Clear y Tinted. La clara es la que más atención necesita: fija trazo y acento a los valores de modo claro de la tabla de capas, no dejes que los derive sola.</li>
+      <li><b>Exporta el <code>.icon</code></b> y agrégalo al proyecto. El <code>AppIcon.appiconset</code> actual queda redundante — ahí decides si lo borras o lo dejas.</li>
+      <li><b>Exporta aparte el PNG de <span class="num">1024 × 1024</span>.</b> App Store Connect lo pide por su cuenta, no lo saca del <code>.icon</code>.</li>
+      <li><b>Pendiente abierto:</b> <code>ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME</code> sigue apuntando a un <code>AccentColor.colorset</code> vacío mientras el tinte real se fuerza en runtime con <code>.tint(Token.acento)</code>. Funciona, pero no es donde debería vivir.</li>
+    </ol>
+  </section>
+
+  <footer class="pie">
+    <p>
+      <b>Node Cash</b> · identidad de marca · agosto 2026. Los valores de color son los de
+      <code>NodeCash/Utilidades/Colores.swift</code> y el argumento de la marca sale de
+      <code>Docs/07curva.md</code> §1 y <code>Docs/06plandesalida.md</code> §2. Si un token cambia en el
+      código, esta página se actualiza con él — es documentación, no una copia decorativa.
+    </p>
+  </footer>
+
+</div>
+
+</body>
+</html>

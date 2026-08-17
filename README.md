@@ -1,23 +1,50 @@
-# Node Cash — hoja de identidad de marca
+# Node Cash — sitio público
 
-Sitio estático de una sola página con la identidad de marca de Node Cash: el monograma N
-como grafo convergente, la paleta *Deep sea + teal*, la tipografía, la voz y las reglas de uso.
+Página de una sola vista para enseñar la marca y juntar la lista de espera. Sin dependencias,
+sin build, sin frameworks: HTML, una hoja de estilos y treinta líneas de JavaScript.
 
-Sin dependencias, sin build, sin frameworks. Se abre con doble clic y se publica tal cual.
+Está en oscuro a propósito, sin interruptor de tema: la app se diseñó en oscuro y así es como se
+ve el producto.
 
 ---
 
 ## Publicar en GitHub Pages
 
-1. Crea un repositorio nuevo y sube el contenido de esta carpeta **en la raíz**
-   (que `index.html` quede en la raíz del repo, no dentro de otra carpeta).
-2. En el repo: **Settings → Pages**.
-3. En *Source*, elige **Deploy from a branch**.
-4. Branch: **`main`**, carpeta: **`/ (root)`**. Guarda.
-5. En un minuto queda en `https://<usuario>.github.io/<repo>/`.
+1. Sube el contenido de esta carpeta **a la raíz** de un repositorio nuevo (que `index.html`
+   quede en la raíz, no dentro de otra carpeta).
+2. **Settings → Pages**.
+3. *Source*: **Deploy from a branch**. Branch **`main`**, carpeta **`/ (root)`**. Guarda.
+4. En un minuto queda en `https://<usuario>.github.io/<repo>/`.
 
-Si más adelante quieres dominio propio, agrega un archivo `CNAME` en la raíz con el dominio
-(una línea, sin `https://`) y apunta el DNS a GitHub Pages.
+**Dominio propio:** agrega un archivo `CNAME` en la raíz con el dominio en una sola línea (sin
+`https://`) y apunta el DNS a GitHub Pages.
+
+---
+
+## Conectar la lista de espera
+
+GitHub Pages es estático: no procesa envíos. Mientras no conectes un servicio, el formulario
+avisa que falta conectarlo en lugar de fingir que guardó el correo.
+
+Para dejarlo funcionando, en `index.html` busca `<form class="formulario"`:
+
+1. Pon la URL de tu servicio en `action`.
+2. Borra el atributo `data-sin-conectar`.
+
+```html
+<form class="formulario" action="https://formspree.io/f/TU-ID" method="post">
+```
+
+Sirve cualquiera que acepte un POST de formulario:
+
+| Servicio | Plan gratis | Nota |
+|---|---|---|
+| **Formspree** | 50 envíos al mes | Lo más rápido de conectar; te llegan por correo |
+| **Buttondown** | 100 suscriptores | Es lista de correo de verdad, con newsletter incluida |
+| **Mailchimp / MailerLite** | ~500–1,000 contactos | El campo se llama distinto: revisa el `name` que pide el formulario embebido |
+
+El campo se manda como `email`. Si tu servicio espera otro nombre, cambia el `name` del
+`<input class="campo">`.
 
 ---
 
@@ -25,49 +52,38 @@ Si más adelante quieres dominio propio, agrega un archivo `CNAME` en la raíz c
 
 ```
 .
-├── index.html                  ← toda la hoja: contenido + los SVG de la marca en línea
-├── .nojekyll                   ← publica los archivos tal cual, sin pasar por Jekyll
+├── index.html                ← toda la página, con el símbolo y las ilustraciones en SVG
+├── .nojekyll                 ← publica los archivos tal cual, sin pasar por Jekyll
 ├── README.md
 └── assets/
-    ├── css/identidad.css       ← los tokens de color, uno a uno como en Colores.swift
-    ├── js/tema.js              ← cambio claro/oscuro (sin preferencia guardada manda el sistema)
-    └── img/favicon.svg         ← el monograma con su fondo, para la pestaña
+    ├── css/estilo.css        ← un solo archivo, ordenado por secciones
+    ├── js/pagina.js          ← revela las ilustraciones y avisa si el formulario no está conectado
+    └── img/marca.svg         ← el símbolo (favicon y descarga del kit de marca)
 ```
 
-Las rutas son relativas, así que funciona igual en la raíz de un dominio, en un subdirectorio
-de GitHub Pages o abierto desde el disco.
+Rutas relativas: funciona igual en la raíz de un dominio, en un subdirectorio de Pages o abierta
+desde el disco.
 
 ---
 
-## De dónde sale cada cosa
+## Qué cambiar cuando cambie el producto
 
-| En la página | Fuente en el repo de la app |
-|---|---|
-| Todos los valores de color | `NodeCash/NodeCash/Utilidades/Colores.swift` |
-| El argumento de la marca (convergencia) | `Docs/07curva.md` §1 |
-| Tagline, activos de marca y tono | `Docs/06plandesalida.md` §2 y §10 |
-| Principios de la voz | `Docs/12decisiones.md` §5 |
-| Formato de dinero y fechas | `Utilidades/Dinero+Formato.swift`, `Utilidades/FormatoDeFecha.swift` |
+- **La fecha de salida.** «Sale este año» está en la sección de la lista de espera; cuando haya
+  fecha, ponla.
+- **Los números de ejemplo.** La curva usa un caso de $22,000 de ingreso con un excedente de $950
+  en octubre. Si cambias las cifras, cámbialas en los tres lugares donde aparecen: la gráfica, la
+  píldora de aviso y la sección del muro.
+- **Las capturas.** Hoy no hay ninguna: las ilustraciones son SVG dibujados para la página, así que
+  no prometen pantallas que todavía pueden cambiar. Cuando la app esté lista, el lugar natural
+  para meterlas es después de la sección «La curva».
 
-**Regla:** esta página es documentación, no una copia decorativa. Si un token cambia en
-`Colores.swift`, se cambia aquí también — en `assets/css/identidad.css` (bloque `:root` para
-claro, los dos bloques de oscuro) y en las tablas de `index.html`.
+## Detalles que conviene no romper
 
----
-
-## La marca
-
-El monograma vive una sola vez, como `<symbol id="marca">` al inicio de `index.html`, y se
-reusa con `<use>` en cada tamaño y apariencia. Los colores entran por `var(--linea)` y
-`var(--nodo)` en atributo de presentación, que es lo único que hereda de forma confiable
-dentro de `<use>`: una apariencia nueva son dos variables y un fondo, no un dibujo nuevo.
-
-Geometría sobre lienzo de 1024 × 1024:
-
-- Aristas: `300,264 → 300,760`, `300,264 → 724,760`, `724,264 → 724,760`. Grosor 56, terminaciones redondas.
-- Nodos: radio 64 en los cuatro vértices.
-- **El nodo de llegada (`724,760`) es el único en acento.** Es el punto al que todo converge.
-
-Para exportar un SVG suelto (para Icon Composer, prensa o redes), el `<symbol>` de
-`index.html` se copia tal cual dentro de un `<svg viewBox="0 0 1024 1024">` reemplazando
-`var(--linea)` y `var(--nodo)` por los hex de la tabla de capas.
+- **El símbolo se usa siempre con su fondo.** Vive una sola vez, como `<symbol id="marca">` al
+  inicio de `index.html`, y se reusa con `<use>` en cada tamaño.
+- **Un solo acento.** El verde `#00A896` es de la marca; el ámbar `#FFA92E` es del muro y de nada
+  más. Si el ámbar empieza a usarse para botones, el muro deja de destacar.
+- **La animación es una sola.** Las doce columnas al cargar y las barras de la curva al entrar en
+  pantalla. Ambas respetan «reducir movimiento» del sistema.
+- **El tono.** La página informa y no regaña: dice el número y se calla. Es la misma regla que
+  sigue la app.

@@ -1,0 +1,39 @@
+/* ═══════════════════════════════════════════════════════════════
+   Node Cash · documentos legales
+   Se carga después de estilo.css y solo agrega lo que un texto
+   largo necesita: columna de lectura, índice y jerarquía de títulos.
+   ═══════════════════════════════════════════════════════════════ */
+
+.legal{padding:clamp(56px,8vw,96px) 0 var(--aire)}
+.legal .contenido{max-width:760px}
+
+.legal-fecha{
+  margin-top:18px; font-family:var(--mono); font-size:12.5px;
+  color:var(--tinta-2); letter-spacing:.02em;
+}
+
+.legal-resumen{
+  margin-top:36px; padding:22px 24px; border-radius:14px;
+  background:var(--marea); border:1px solid var(--linea-tenue);
+}
+.legal-resumen p{color:var(--tinta); font-size:16px; line-height:1.6}
+.legal-resumen p + p{margin-top:10px}
+.legal-resumen b{color:var(--teal); font-weight:640}
+
+.legal-indice{margin-top:36px}
+.legal-indice ol{margin:12px 0 0; padding-left:22px; color:var(--tinta-2); font-size:15px; line-height:1.9}
+.legal-indice a{color:var(--tinta-2); text-decoration:none; border-bottom:1px solid var(--linea-tenue)}
+.legal-indice a:hover{color:var(--tinta)}
+
+.legal-seccion{margin-top:52px; scroll-margin-top:84px}
+.legal-seccion h2{font-size:clamp(21px,2.4vw,26px); letter-spacing:-.022em; line-height:1.25}
+.legal-seccion h3{font-size:17px; letter-spacing:-.012em; margin-top:26px}
+.legal-seccion p,
+.legal-seccion li{color:var(--tinta-2); font-size:16px; line-height:1.7}
+.legal-seccion p{margin-top:14px}
+.legal-seccion b{color:var(--tinta); font-weight:620}
+.legal-seccion ul,
+.legal-seccion ol{margin-top:14px; padding-left:22px}
+.legal-seccion ul{list-style:disc}
+.legal-seccion li + li{margin-top:8px}
+.legal-seccion li::marker{color:var(--teal)}

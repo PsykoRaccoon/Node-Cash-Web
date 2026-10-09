@@ -41,7 +41,7 @@
       <span class="ficha ficha--nav"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
       <span>Node&nbsp;Cash</span>
     </a>
-    <a class="boton boton--chico" href="#lista">Avísame cuando salga</a>
+    <a class="boton boton--chico" href="#pronto">Muy pronto</a>
   </div>
 </header>
 
@@ -82,7 +82,7 @@
       </p>
 
       <div class="acciones">
-        <a class="boton" href="#lista">Avísame cuando salga</a>
+        <a class="boton" href="#pronto">Muy pronto en el App Store</a>
         <a class="enlace-quieto" href="#curva">Ver de qué se trata</a>
       </div>
     </div>
@@ -326,32 +326,16 @@
   </section>
 
 
-  <!-- ═══ LISTA DE ESPERA ════════════════════════════════════ -->
-  <section class="banda banda--lista" id="lista">
+  <!-- ═══ MUY PRONTO ═══════════════════════════════════════════
+       Cuando la app esté publicada, este bloque se vuelve el botón
+       oficial de descarga (y los dos botones de arriba apuntan aquí). -->
+  <section class="banda banda--pronto" id="pronto">
     <div class="contenido contenido--angosto">
       <span class="ficha ficha--grande sombra"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
-      <h2 class="titulo">Sale este año. ¿Te aviso?</h2>
+      <h2 class="titulo">Muy pronto en el App&nbsp;Store.</h2>
       <p class="parrafo">
-        Déjame tu correo y te escribo cuando puedas descargarla. Quien esté en la lista entra antes
-        a la beta y se queda con el precio de fundador.
-      </p>
-
-      <!--
-        Formulario estático: GitHub Pages no procesa envíos.
-        Para conectarlo, pon la URL de tu servicio (Formspree, Buttondown, Mailchimp…)
-        en el atributo `action` de abajo y quita el `data-sin-conectar`.
-      -->
-      <form class="formulario" action="" method="post" data-sin-conectar>
-        <label class="visualmente-oculto" for="correo">Tu correo</label>
-        <input class="campo" id="correo" name="email" type="email" required autocomplete="email"
-               inputmode="email" placeholder="tu@correo.com">
-        <button class="boton" type="submit">Avísame</button>
-        <p class="formulario-aviso" data-aviso role="status" aria-live="polite"></p>
-      </form>
-
-      <p class="letra-chica">
-        Un correo cada diez días como máximo, con avances de verdad. Nada de spam y te puedes salir
-        con un clic.
+        Node Cash está en sus últimos ajustes. Cuando esté lista para descargar, la vas a encontrar
+        en el App Store de tu iPhone como <b>Node Cash</b>, y aquí mismo aparecerá el enlace.
       </p>
 
       <ul class="promesas">
@@ -373,10 +357,17 @@
         <span>cuánto de tu futuro ya está vendido</span>
       </div>
     </div>
-    <p class="pie-nota">
-      Hecha en México. Node Cash hace aritmética, no asesoría financiera: no recomienda productos
-      ni promete rendimientos.
-    </p>
+    <div>
+      <p class="pie-nota">
+        Hecha en México. Node Cash hace aritmética, no asesoría financiera: no recomienda productos
+        ni promete rendimientos.
+      </p>
+      <nav class="pie-enlaces" aria-label="Legal">
+        <a href="privacidad.html">Privacidad</a>
+        <a href="terminos.html">Términos</a>
+        <a href="mailto:soporte@nodecash.com.mx">soporte@nodecash.com.mx</a>
+      </nav>
+    </div>
   </div>
 </footer>
 

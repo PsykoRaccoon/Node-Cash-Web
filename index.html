@@ -2,14 +2,14 @@
 <html lang="es-MX">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Node Cash — cuánto de tu futuro ya está vendido</title>
-<meta name="description" content="Comprar a 12 meses sin intereses no es gastar $12,000 hoy: es vender $1,000 de cada uno de los próximos doce meses. Node Cash te enseña cuáles de tus meses ya están vendidos.">
+<meta name="description" content="Comprar a 12 meses sin intereses no es gastar $12,000 hoy: es vender $1,000 de cada uno de los próximos doce meses. Node Cash te enseña cuáles de tus meses ya están vendidos. Beta pública en TestFlight.">
 <meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0D1321">
+<meta name="theme-color" content="#0B1420">
 
 <meta property="og:title" content="Node Cash — cuánto de tu futuro ya está vendido">
-<meta property="og:description" content="Tus tarjetas, tus meses sin intereses y tus gastos fijos en una sola curva. Para saber en qué mes se te junta todo, antes de comprar.">
+<meta property="og:description" content="Tus tarjetas, tus meses sin intereses y tus gastos fijos en una sola curva. Ya puedes probar la beta en TestFlight.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta name="twitter:card" content="summary_large_image">
@@ -17,10 +17,17 @@
 <link rel="icon" href="assets/img/marca.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/marca.svg">
 <link rel="stylesheet" href="assets/css/estilo.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
-<!-- El símbolo vive una sola vez y se reusa en cada tamaño. -->
+<!--
+  Enlace de la beta pública en TestFlight: https://testflight.apple.com/join/rabx4By2
+  Aparece en los enlaces con [data-testflight] (header, hero y sección #beta) y en el QR.
+  Cuando la app salga en el App Store, cambia esos href y regenera el QR.
+-->
+
+<!-- El símbolo y los íconos viven una sola vez y se reusan. -->
 <svg width="0" height="0" class="defs" aria-hidden="true" focusable="false">
   <symbol id="marca" viewBox="0 0 1024 1024">
     <path d="M300,264 L 300,760" fill="none" stroke="var(--linea)" stroke-width="56" stroke-linecap="round"/>
@@ -31,9 +38,26 @@
     <circle cx="724" cy="264" r="64" fill="var(--linea)"/>
     <circle cx="724" cy="760" r="64" fill="var(--nodo)"/>
   </symbol>
+  <symbol id="i-descarga" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-alerta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></symbol>
+  <symbol id="i-reloj" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9"/></symbol>
+  <symbol id="i-campana" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15zM10 21h4"/></symbol>
+  <symbol id="i-tarjeta" viewBox="0 0 24 24"><rect x="2" y="4.5" width="20" height="15" rx="3.2" fill="currentColor"/><rect x="2" y="8" width="20" height="2.6" fill="#0A101C" opacity=".55"/><rect x="5" y="14" width="3.5" height="2.4" rx=".8" fill="#0A101C" opacity=".55"/></symbol>
+  <symbol id="i-fijos" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l3 3-3 3M4 11V9a3 3 0 0 1 3-3h13M7 21l-3-3 3-3M20 13v2a3 3 0 0 1-3 3H4"/></symbol>
+  <symbol id="i-mas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></symbol>
+  <symbol id="i-curva" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M6 15l4-5 3 3 5-6"/><circle cx="10" cy="10" r=".6"/><circle cx="13" cy="13" r=".6"/></symbol>
+  <symbol id="i-config" viewBox="0 0 24 24"><path fill="currentColor" d="M13.6 2l.5 2.6 1.8.8 2.2-1.5 2.3 2.3-1.5 2.2.8 1.8 2.6.5v3.2l-2.6.5-.8 1.8 1.5 2.2-2.3 2.3-2.2-1.5-1.8.8-.5 2.6h-3.2l-.5-2.6-1.8-.8-2.2 1.5-2.3-2.3 1.5-2.2-.8-1.8L2 13.6v-3.2l2.6-.5.8-1.8-1.5-2.2 2.3-2.3 2.2 1.5 1.8-.8.5-2.6zM12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/></symbol>
+  <symbol id="i-abajo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0 5-5m-5 5-5-5M5 20h14"/></symbol>
+  <symbol id="i-cronometro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v4h-4M12 8v4l2.5 2"/></symbol>
+  <symbol id="i-olas" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 13c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 18c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></symbol>
+  <symbol id="i-calendario" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></symbol>
+  <symbol id="i-candado" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-nube" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 18.5h10.5a4 4 0 0 0 .4-8 6 6 0 0 0-11.6 1.5A3.3 3.3 0 0 0 7 18.5z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
 </svg>
 
-<a class="saltar" href="#curva">Saltar al contenido</a>
+<a class="saltar" href="#inicio">Saltar al contenido</a>
 
 <header class="barra">
   <div class="barra-in">
@@ -41,7 +65,12 @@
       <span class="ficha ficha--nav"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
       <span>Node&nbsp;Cash</span>
     </a>
-    <a class="boton boton--chico" href="#pronto">Muy pronto</a>
+    <nav class="barra-nav" aria-label="Secciones">
+      <a href="#curva">La curva</a>
+      <a href="#avisos">Avisos</a>
+      <a href="soporte.html">Soporte</a>
+    </nav>
+    <a class="boton boton--chico" href="https://testflight.apple.com/join/rabx4By2" data-testflight>Probar la beta</a>
   </div>
 </header>
 
@@ -50,40 +79,118 @@
   <!-- ═══ HERO ═══════════════════════════════════════════════ -->
   <section class="banda banda--hero">
     <div class="contenido">
-      <p class="ceja">App para México · iPhone · en construcción</p>
+      <div class="hero">
+        <div>
+          <a class="estado" href="#beta"><span class="estado-punto"></span>Beta pública en TestFlight · iPhone</a>
 
-      <h1 class="titular">
-        Comprar a doce meses no es gastar <span class="monto">$12,000</span> hoy.<br>
-        <span class="titular-eco">Es vender <span class="monto">$1,000</span> de cada uno de tus próximos doce meses.</span>
-      </h1>
+          <h1 class="titular">
+            Comprar a doce meses no es gastar <span class="monto">$12,000</span> hoy.
+            <span class="titular-eco">Es vender <span class="monto">$1,000</span> de cada uno de tus próximos doce meses.</span>
+          </h1>
 
-      <div class="tira" role="img" aria-label="Doce columnas, una por mes, cada una con mil pesos ya comprometidos">
-        <div class="tira-meses">
-          <div class="mes" style="--i:0"><span class="mes-barra"><span class="mes-lleno"></span><span class="mes-monto">$1,000</span></span><span class="mes-nombre">sep</span></div>
-          <div class="mes" style="--i:1"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">oct</span></div>
-          <div class="mes" style="--i:2"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">nov</span></div>
-          <div class="mes" style="--i:3"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">dic</span></div>
-          <div class="mes" style="--i:4"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">ene</span></div>
-          <div class="mes" style="--i:5"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">feb</span></div>
-          <div class="mes" style="--i:6"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">mar</span></div>
-          <div class="mes" style="--i:7"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">abr</span></div>
-          <div class="mes" style="--i:8"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">may</span></div>
-          <div class="mes" style="--i:9"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">jun</span></div>
-          <div class="mes" style="--i:10"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">jul</span></div>
-          <div class="mes" style="--i:11"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre">ago</span></div>
+          <p class="entrada">
+            Ese dinero no aparece en ningún lado. El banco te enseña el mes en curso; nadie te enseña
+            <span data-mes="4" data-formato="largo">marzo</span>. Node Cash junta tus tarjetas, tus compras a meses y tus gastos fijos, y te dice
+            cuánto de cada mes que viene ya tiene dueño.
+          </p>
+
+          <div class="acciones">
+            <a class="boton" href="https://testflight.apple.com/join/rabx4By2" data-testflight>
+              <svg aria-hidden="true"><use href="#i-descarga"/></svg>Probar la beta en TestFlight
+            </a>
+            <div class="qr vidrio" aria-hidden="true">
+              <span class="qr-codigo"><svg viewBox="0 0 29 29"><path stroke="#0A0F1A" d="M0 0.5h7m1 0h1m3 0h1m3 0h5m1 0h7m-29 1h1m5 0h1m1 0h2m2 0h3m1 0h3m1 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h5m2 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h3m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h2m2 0h1m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h1m3 0h1m2 0h1m1 0h2m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m2 0h1m2 0h2m1 0h2m1 0h1m-21 1h1m1 0h2m1 0h3m1 0h1m1 0h2m4 0h1m1 0h2m1 0h1m2 0h1m1 0h2m-27 1h1m2 0h1m1 0h1m2 0h1m3 0h1m1 0h9m3 0h1m-26 1h8m1 0h1m3 0h1m1 0h1m2 0h1m1 0h1m2 0h2m-25 1h1m1 0h1m5 0h3m1 0h1m3 0h1m3 0h1m4 0h1m-28 1h1m1 0h2m1 0h2m1 0h2m3 0h1m2 0h1m5 0h1m1 0h2m-27 1h1m2 0h2m3 0h4m2 0h2m1 0h1m1 0h1m2 0h1m3 0h3m-27 1h1m3 0h1m1 0h1m7 0h2m1 0h1m1 0h1m1 0h2m1 0h3m-29 1h2m1 0h2m2 0h1m1 0h2m5 0h1m2 0h3m2 0h1m2 0h1m-28 1h1m1 0h6m3 0h1m1 0h1m1 0h1m2 0h4m2 0h2m1 0h1m-27 1h5m2 0h1m2 0h2m1 0h2m1 0h1m5 0h1m1 0h3m-28 1h1m2 0h4m1 0h3m1 0h1m2 0h3m3 0h4m1 0h1m-25 1h1m1 0h1m3 0h2m1 0h1m5 0h2m2 0h1m4 0h1m-26 1h1m1 0h2m1 0h1m2 0h2m1 0h1m2 0h12m-19 1h5m1 0h1m1 0h5m3 0h5m-29 1h7m1 0h1m2 0h1m1 0h2m1 0h5m1 0h1m1 0h2m1 0h1m-28 1h1m5 0h1m1 0h3m2 0h1m1 0h1m2 0h1m1 0h1m3 0h2m-26 1h1m1 0h3m1 0h1m3 0h3m4 0h2m1 0h5m1 0h3m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h3m3 0h2m1 0h3m2 0h1m-29 1h1m1 0h3m1 0h1m1 0h4m2 0h1m1 0h5m2 0h1m2 0h1m1 0h1m-29 1h1m5 0h1m3 0h3m7 0h1m3 0h2m1 0h1m-28 1h7m1 0h2m1 0h1m1 0h1m1 0h1m2 0h5m2 0h1m1 0h1"/></svg></span>
+              <span class="qr-txt"><b>Desde tu iPhone</b>apunta la cámara aquí</span>
+            </div>
+          </div>
+          <p class="acciones-nota">Gratis · Necesitas la app TestFlight de Apple · <a class="enlace-quieto" href="#beta">Cómo instalarla</a></p>
         </div>
-        <p class="tira-pie">Cada columna es un mes. Lo verde ya está vendido.</p>
+
+        <!-- Pantalla Tarjetas, recreada con datos de ejemplo. -->
+        <div class="tel-marco" aria-hidden="true">
+          <div class="tel">
+            <span class="tel-isla"></span>
+            <div class="tel-estado"><span>9:41</span><i><b class="senal"></b><b class="bat"></b></i></div>
+            <div class="tel-pantalla">
+              <div class="tel-arriba">
+                <span class="tel-avatar">N</span>
+                <span class="tel-campana"><svg><use href="#i-campana"/></svg></span>
+              </div>
+              <p class="tel-saludo" data-saludo>Buenas noches</p>
+
+              <div class="tel-card">
+                <p class="tel-etq">Crédito total disponible</p>
+                <p class="tel-grande monto">$88,450<small>.00</small></p>
+                <p class="tel-sub">de $121,000.00 · usado $32,550.00</p>
+                <div class="tel-barra">
+                  <i style="width:11.3%; background:var(--c-azul)"></i>
+                  <i style="width:10.7%; background:var(--c-rojo)"></i>
+                  <i style="width:4.1%; background:var(--c-morado)"></i>
+                  <i style="width:.9%; background:var(--c-coral)"></i>
+                </div>
+                <div class="tel-leyenda">
+                  <span style="--c:var(--c-azul)">Clásica <b>$13,700</b></span>
+                  <span style="--c:var(--c-rojo)">Platino <b>$13,000</b></span>
+                  <span style="--c:var(--c-morado)">Digital <b>$5,000</b></span>
+                  <span style="--c:var(--c-coral)">Depto. <b>$850</b></span>
+                </div>
+                <p class="tel-pie">$30,700 en meses · $1,850 revolvente</p>
+              </div>
+
+              <div class="tel-card">
+                <p class="tel-fila-tit">Próximos pagos</p>
+                <div class="tel-pago">
+                  <span class="chip chip--ambar">Atrasado</span>
+                  <p>Clásica · venció hace 5 días</p>
+                  <span class="monto">$500<small>.00</small></span>
+                </div>
+                <div class="tel-pago">
+                  <span class="chip chip--teal">Corte</span>
+                  <p>Departamental · en 4 días</p>
+                  <svg class="tel-reloj"><use href="#i-reloj"/></svg>
+                </div>
+              </div>
+
+              <div class="tel-card tel-tarjeta">
+                <p class="tel-tarjeta-tit"><span class="color-tarjeta ct-azul"></span>Clásica<span class="chip chip--ambar"><svg><use href="#i-alerta"/></svg>Venció hace 5 días</span></p>
+                <div class="tel-dos">
+                  <div><p class="tel-etq">Disponible</p><p class="tel-grande monto">$36,300<small>.00</small></p></div>
+                  <div><p class="tel-etq">A pagar este mes</p><p class="monto">$500<small>.00</small></p></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tel-tabs">
+              <span class="tel-tab tel-tab--activa"><svg><use href="#i-tarjeta"/></svg>Tarjetas</span>
+              <span class="tel-tab"><svg><use href="#i-fijos"/></svg>Fijos</span>
+              <span class="tel-tab tel-tab--mas"><svg><use href="#i-mas"/></svg></span>
+              <span class="tel-tab"><svg><use href="#i-curva"/></svg>Curva</span>
+              <span class="tel-tab"><svg><use href="#i-config"/></svg>Config.</span>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <p class="entrada">
-        Ese dinero no aparece en ningún lado. El banco te enseña el mes en curso; nadie te enseña
-        marzo. Node Cash junta tus tarjetas, tus compras a meses y tus gastos fijos, y te dice
-        cuánto de cada mes que viene ya tiene dueño.
-      </p>
-
-      <div class="acciones">
-        <a class="boton" href="#pronto">Muy pronto en el App Store</a>
-        <a class="enlace-quieto" href="#curva">Ver de qué se trata</a>
+      <!-- La tira de doce meses: el momento de la página. -->
+      <div class="tira vidrio" role="img" aria-label="Doce columnas, una por mes, cada una con mil pesos ya comprometidos">
+        <div class="tira-cabeza">
+          <b>Una compra de $12,000 a 12 meses sin intereses</b>
+          <p>Cada columna es un mes. Lo verde ya está vendido.</p>
+        </div>
+        <div class="tira-meses">
+          <div class="mes" style="--i:0"><span class="mes-barra"><span class="mes-lleno"></span><span class="mes-monto">$1,000</span></span><span class="mes-nombre" data-mes="0" data-formato="corto">nov</span></div>
+          <div class="mes" style="--i:1"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="1" data-formato="corto">dic</span></div>
+          <div class="mes" style="--i:2"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="2" data-formato="corto">ene</span></div>
+          <div class="mes" style="--i:3"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="3" data-formato="corto">feb</span></div>
+          <div class="mes" style="--i:4"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="4" data-formato="corto">mar</span></div>
+          <div class="mes" style="--i:5"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="5" data-formato="corto">abr</span></div>
+          <div class="mes" style="--i:6"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="6" data-formato="corto">may</span></div>
+          <div class="mes" style="--i:7"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="7" data-formato="corto">jun</span></div>
+          <div class="mes" style="--i:8"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="8" data-formato="corto">jul</span></div>
+          <div class="mes" style="--i:9"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="9" data-formato="corto">ago</span></div>
+          <div class="mes" style="--i:10"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="10" data-formato="corto">sep</span></div>
+          <div class="mes" style="--i:11"><span class="mes-barra"><span class="mes-lleno"></span></span><span class="mes-nombre" data-mes="11" data-formato="corto">oct</span></div>
+        </div>
       </div>
     </div>
   </section>
@@ -91,257 +198,280 @@
   <!-- ═══ LA CURVA ═══════════════════════════════════════════ -->
   <section class="banda" id="curva">
     <div class="contenido">
-      <p class="ceja ceja--acento">La curva</p>
-      <h2 class="titulo">Tus próximos doce meses, en una sola gráfica.</h2>
-      <p class="parrafo">
-        Una barra por mes. Abajo lo que no puedes mover —renta, luz, internet—, arriba lo que tú
-        decidiste: cada tarjeta con su color, cada compra a meses en el mes que de verdad te va a
-        caer. La línea punteada es tu ingreso.
-      </p>
+      <div class="cabeza">
+        <p class="ceja ceja--acento">La curva</p>
+        <h2 class="titulo">Tus próximos meses, en una sola gráfica.</h2>
+        <p class="parrafo">
+          Una barra por mes. Abajo lo que no puedes mover —renta, servicios, el crédito del coche—,
+          arriba cada tarjeta con su color y cada compra a meses en el mes que de verdad te va a caer.
+          La línea punteada es tu ingreso.
+        </p>
+      </div>
 
-      <figure class="grafica" data-revelar>
-        <svg viewBox="52 62 818 336" role="img" aria-labelledby="t-curva d-curva">
-          <title id="t-curva">Curva de compromisos de seis meses</title>
-          <desc id="d-curva">
-            Seis barras mensuales apiladas por gastos fijos y tres tarjetas. Octubre rebasa la línea
-            de ingreso confiable por $950; el excedente se marca en ámbar.
-          </desc>
+      <div class="dos">
+        <!-- Pantalla Curva, recreada con datos de ejemplo. -->
+        <div class="curva vidrio" data-revelar>
+          <div class="curva-arriba">
+            <h3>Curva</h3>
+            <div class="segmentos" role="group" aria-label="Meses a mostrar">
+              <button type="button" data-rango="6" aria-pressed="true">6 m</button>
+              <button type="button" data-rango="12" aria-pressed="false">12 m</button>
+              <button type="button" data-rango="18" aria-pressed="false">18 m</button>
+            </div>
+          </div>
 
-          <!-- línea de ingreso -->
-          <line class="g-ingreso" x1="70" y1="120" x2="850" y2="120"/>
-          <text class="g-nota" x="850" y="104" text-anchor="end">Tu ingreso · $22,000</text>
+          <div class="curva-queda">
+            <div>
+              <p class="tel-etq"><span data-mes="0" data-formato="Largo">Noviembre</span> · te queda</p>
+              <span class="monto monto--grande">$6,200<small>.00</small></span>
+              <p class="tel-sub">$22,000 confiable – $13,800 comprometido – $2,000 colchón</p>
+            </div>
+            <span class="desglose" aria-hidden="true">Desglose</span>
+          </div>
 
-          <!-- barras: fijos abajo, tarjetas arriba -->
-          <g class="g-barras">
-            <!-- sep -->
-            <g style="--i:0">
-              <rect class="g-fijos" x="100" y="230" width="74" height="70" rx="4"/>
-              <rect class="g-c1"    x="100" y="190" width="74" height="40"/>
-              <rect class="g-c2"    x="100" y="160" width="74" height="30"/>
-              <rect class="g-c3"    x="100" y="135" width="74" height="25" rx="4"/>
-            </g>
-            <!-- oct -->
-            <g style="--i:1">
-              <rect class="g-fijos" x="218" y="230" width="74" height="70" rx="4"/>
-              <rect class="g-c1"    x="218" y="175" width="74" height="55"/>
-              <rect class="g-c2"    x="218" y="130" width="74" height="45"/>
-              <rect class="g-c3"    x="218" y="95"  width="74" height="35" rx="4"/>
-              <rect class="g-muro"  x="218" y="95"  width="74" height="25" rx="4"/>
-            </g>
-            <!-- nov -->
-            <g style="--i:2">
-              <rect class="g-fijos" x="336" y="230" width="74" height="70" rx="4"/>
-              <rect class="g-c1"    x="336" y="190" width="74" height="40"/>
-              <rect class="g-c2"    x="336" y="160" width="74" height="30"/>
-              <rect class="g-c3"    x="336" y="130" width="74" height="30" rx="4"/>
-            </g>
-            <!-- dic -->
-            <g style="--i:3">
-              <rect class="g-fijos" x="454" y="230" width="74" height="70" rx="4"/>
-              <rect class="g-c1"    x="454" y="190" width="74" height="40"/>
-              <rect class="g-c2"    x="454" y="165" width="74" height="25"/>
-              <rect class="g-c3"    x="454" y="135" width="74" height="30" rx="4"/>
-            </g>
-            <!-- ene -->
-            <g style="--i:4">
-              <rect class="g-fijos" x="572" y="230" width="74" height="70" rx="4"/>
-              <rect class="g-c1"    x="572" y="200" width="74" height="30"/>
-              <rect class="g-c3"    x="572" y="175" width="74" height="25" rx="4"/>
-            </g>
-            <!-- feb -->
-            <g style="--i:5">
-              <rect class="g-fijos" x="690" y="230" width="74" height="70" rx="4"/>
-              <rect class="g-c3"    x="690" y="210" width="74" height="20" rx="4"/>
-            </g>
-          </g>
+          <div class="cv" data-rango="6" role="img" aria-label="Gráfica de barras apiladas: el mes actual compromete $13,800 de un ingreso confiable de $22,000; el siguiente mes es el más pesado con $18,050; al liquidarse el crédito del coche el compromiso baja a $8,750 al mes.">
+            <div class="cv-guias" aria-hidden="true">
+              <span style="bottom:0" data-v="$0"></span>
+              <span style="bottom:20%" data-v="$5k"></span>
+              <span style="bottom:40%" data-v="$10k"></span>
+              <span style="bottom:60%" data-v="$15k"></span>
+              <span style="bottom:80%" data-v="$20k"></span>
+              <span style="bottom:100%" data-v="$25k"></span>
+            </div>
+            <div class="cv-cols" aria-hidden="true">
+            <div class="cv-col actual" style="--i:0"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-coral" style="height:3.40%"></i></span><span class="cv-et" data-mes="0" data-formato="corto">nov</span></div>
+            <div class="cv-col" style="--i:1"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:14.80%"></i><i class="cv-s cv-morado" style="height:3.20%"></i><i class="cv-s cv-rojo" style="height:2.40%"></i></span><span class="cv-et" data-mes="1" data-formato="corto">dic</span></div>
+            <div class="cv-col cv-enero" style="--i:2" data-anio="2027"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:10.00%"></i><i class="cv-s cv-morado" style="height:3.20%"></i><i class="cv-s cv-rojo" style="height:2.40%"></i></span><span class="cv-et" data-mes="2" data-formato="corto">ene</span></div>
+            <div class="cv-col" style="--i:3"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:5.20%"></i><i class="cv-s cv-morado" style="height:3.20%"></i><i class="cv-s cv-rojo" style="height:2.40%"></i></span><span class="cv-et" data-mes="3" data-formato="corto">feb</span></div>
+            <div class="cv-col" style="--i:4"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:5.20%"></i><i class="cv-s cv-morado" style="height:3.20%"></i><i class="cv-s cv-rojo" style="height:2.40%"></i></span><span class="cv-et" data-mes="4" data-formato="corto">mar</span></div>
+            <div class="cv-col" style="--i:5"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:5.20%"></i><i class="cv-s cv-morado" style="height:3.20%"></i><i class="cv-s cv-rojo" style="height:2.40%"></i></span><span class="cv-et" data-mes="5" data-formato="corto">abr</span></div>
+            <div class="cv-col" style="--i:6"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:4.00%"></i><i class="cv-s cv-morado" style="height:3.20%"></i><i class="cv-s cv-rojo" style="height:2.40%"></i></span><span class="cv-et" data-mes="6" data-formato="corto">may</span></div>
+            <div class="cv-col" style="--i:7"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:4.00%"></i><i class="cv-s cv-morado" style="height:3.20%"></i><i class="cv-s cv-rojo" style="height:2.40%"></i></span><span class="cv-et" data-mes="7" data-formato="corto">jun</span></div>
+            <div class="cv-col" style="--i:8"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:4.00%"></i><i class="cv-s cv-rojo" style="height:2.40%"></i></span><span class="cv-et" data-mes="8" data-formato="corto">jul</span></div>
+            <div class="cv-col" style="--i:9"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:4.00%"></i><i class="cv-s cv-rojo" style="height:2.40%"></i></span><span class="cv-et" data-mes="9" data-formato="corto">ago</span></div>
+            <div class="cv-col" style="--i:10"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:4.00%"></i><i class="cv-s cv-rojo" style="height:2.40%"></i></span><span class="cv-et" data-mes="10" data-formato="corto">sep</span></div>
+            <div class="cv-col" style="--i:11"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i><i class="cv-s cv-azul" style="height:4.00%"></i></span><span class="cv-et" data-mes="11" data-formato="corto">oct</span></div>
+            <div class="cv-col" style="--i:12"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i></span><span class="cv-et" data-mes="12" data-formato="corto">nov</span></div>
+            <div class="cv-col" style="--i:13"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i><i class="cv-s cv-plazo" style="height:16.80%"></i></span><span class="cv-et" data-mes="13" data-formato="corto">dic</span></div>
+            <div class="cv-col cv-enero" style="--i:14" data-anio="2028"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i></span><span class="cv-et" data-mes="14" data-formato="corto">ene</span></div>
+            <div class="cv-col" style="--i:15"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i></span><span class="cv-et" data-mes="15" data-formato="corto">feb</span></div>
+            <div class="cv-col" style="--i:16"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i></span><span class="cv-et" data-mes="16" data-formato="corto">mar</span></div>
+            <div class="cv-col" style="--i:17"><span class="cv-pila"><i class="cv-s cv-fijos" style="height:35.00%"></i></span><span class="cv-et" data-mes="17" data-formato="corto">abr</span></div>
+            </div>
+            <span class="cv-ingreso" aria-hidden="true"></span>
+          </div>
 
-          <!-- piso y meses -->
-          <line class="g-piso" x1="70" y1="300" x2="850" y2="300"/>
-          <g class="g-meses">
-            <text x="137" y="326">sep</text>
-            <text x="255" y="326">oct</text>
-            <text x="373" y="326">nov</text>
-            <text x="491" y="326">dic</text>
-            <text x="609" y="326">ene</text>
-            <text x="727" y="326">feb</text>
-          </g>
+          <ul class="cv-leyenda" aria-label="Leyenda">
+            <li class="raya">Ingreso confiable</li>
+            <li style="--c:var(--c-fijos)">Gastos fijos</li>
+            <li style="--c:var(--c-plazo)">Créditos a plazo</li>
+            <li style="--c:var(--c-azul)">Clásica</li>
+            <li style="--c:var(--c-rojo)">Platino</li>
+            <li style="--c:var(--c-morado)">Digital</li>
+            <li style="--c:var(--c-coral)">Departamental</li>
+          </ul>
+        </div>
 
-          <!-- aviso -->
-          <g class="g-aviso" transform="translate(100,352)">
-            <rect x="0" y="0" width="330" height="34" rx="17"/>
-            <text x="20" y="22">Octubre rebasa tu ingreso por $950</text>
-          </g>
-        </svg>
-      </figure>
+        <!-- Resumen: así habla la app. -->
+        <div class="resumen" data-revelar>
+          <div class="aviso-ok">
+            <span class="icono"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+            <p>En <span data-mes="2" data-formato="largo-anio">enero de 2027</span> se liberan <b>$1,200.00 al mes</b>: termina la laptop.</p>
+          </div>
 
-      <ul class="leyenda">
-        <li><span class="punto punto--fijos"></span>Gastos fijos</li>
-        <li><span class="punto punto--c1"></span>Tarjeta azul</li>
-        <li><span class="punto punto--c2"></span>Tarjeta morada</li>
-        <li><span class="punto punto--c3"></span>Tarjeta coral</li>
-        <li><span class="punto punto--muro"></span>Lo que rebasa</li>
-      </ul>
-    </div>
-  </section>
+          <h3 class="resumen-tit">Te dice el número. No te dice qué hacer con tu vida.</h3>
 
-  <!-- ═══ EL MURO ════════════════════════════════════════════ -->
-  <section class="banda banda--muro">
-    <div class="contenido">
-      <p class="ceja ceja--alerta">El muro</p>
-      <h2 class="titulo titulo--suelto">
-        El mes en que se te juntan todas.<br>
-        <span class="cifra-muro">+$950</span>
-      </h2>
-      <p class="cifra-pie">lo que octubre se pasa de tu ingreso</p>
-      <p class="parrafo parrafo--ancho">
-        Cada compra a meses se ve chiquita por separado. El problema nunca es una: es el mes donde
-        coinciden cuatro parcialidades, la renta y el seguro del coche. Ese mes es tu muro, y hoy
-        lo descubres cuando ya llegó.
-      </p>
-      <p class="frase-comunidad">«Mi muro es en marzo»</p>
-      <p class="parrafo">
-        La meta es que esa frase se entienda sin explicarla. Node Cash te la dice con meses de
-        anticipación, cuando todavía puedes hacer algo: mover una compra, liquidar con el aguinaldo,
-        o simplemente no comprar esa cuarta cosa a doce meses.
-      </p>
-    </div>
-  </section>
-
-  <!-- ═══ EL NOMBRE ══════════════════════════════════════════ -->
-  <section class="banda banda--marca" id="marca">
-    <div class="contenido">
-      <p class="ceja ceja--acento">El nombre</p>
-      <h2 class="titulo">Un nodo es un punto donde llegan cosas.</h2>
-      <p class="parrafo">
-        Tres tarjetas, un crédito del coche y siete gastos fijos no son nueve problemas: son un solo
-        número al mes. Tu ingreso es uno solo, y por eso la cuenta también tiene que ser una sola.
-        Todo lo que debes entra a un punto — y ese punto es el que la app te enseña.
-      </p>
-
-      <figure class="convergencia" data-revelar>
-        <svg viewBox="0 0 760 260" role="img" aria-labelledby="t-conv">
-          <title id="t-conv">Cinco orígenes de gasto convergiendo en un solo punto</title>
-          <g class="c-aristas">
-            <path d="M158,38  C 310,38  370,130 512,130"/>
-            <path d="M158,84  C 310,84  370,130 512,130"/>
-            <path d="M158,130 L 512,130"/>
-            <path d="M158,176 C 310,176 370,130 512,130"/>
-            <path d="M158,222 C 310,222 370,130 512,130"/>
-          </g>
-          <g class="c-textos" text-anchor="end">
-            <text x="130" y="43">Tarjeta</text>
-            <text x="130" y="89">Tarjeta</text>
-            <text x="130" y="135">Tarjeta</text>
-            <text x="130" y="181">Coche</text>
-            <text x="130" y="227">Fijos</text>
-          </g>
-          <circle class="c-nodo c-nodo--azul"   cx="158" cy="38"  r="11"/>
-          <circle class="c-nodo c-nodo--morado" cx="158" cy="84"  r="11"/>
-          <circle class="c-nodo c-nodo--coral"  cx="158" cy="130" r="11"/>
-          <circle class="c-nodo c-nodo--verde"  cx="158" cy="176" r="11"/>
-          <circle class="c-nodo c-nodo--gris"   cx="158" cy="222" r="11"/>
-          <circle class="c-destino" cx="512" cy="130" r="26"/>
-          <g class="c-final" text-anchor="start">
-            <text x="558" y="124">Tu mes</text>
-            <text class="c-final-tenue" x="558" y="148">un solo número</text>
-          </g>
-        </svg>
-      </figure>
-
-      <div class="par">
-        <span class="ficha ficha--grande sombra"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
-        <div class="par-txt">
-          <h3 class="subtitulo">Por eso el símbolo es una N que también es ese dibujo.</h3>
-          <p class="parrafo">
-            Cuatro puntos y tres líneas: la inicial del nombre y, al mismo tiempo, el camino de todo
-            lo que debes hacia un solo lugar. El punto de abajo a la derecha —el único en verde— es
-            donde llega todo. Es el número que la app existe para enseñarte.
-          </p>
+          <div class="dato vidrio">
+            <span class="tile tile--ambar"><svg aria-hidden="true"><use href="#i-abajo"/></svg></span>
+            <div>
+              <h4>Tu mes más pesado</h4>
+              <p><span data-mes="1" data-formato="Largo-anio">Diciembre de 2026</span>: <b>$18,050.00</b> comprometidos. Lo que más pesa: Renta ($8,500.00) y Crédito automotriz ($4,200.00).</p>
+            </div>
+          </div>
+          <div class="dato vidrio">
+            <span class="tile tile--teal"><svg aria-hidden="true"><use href="#i-cronometro"/></svg></span>
+            <div>
+              <h4>Lo próximo en liquidarse</h4>
+              <p>Laptop. Queda 1 pago de $1,200.00. Termina en <span data-mes="1" data-formato="largo-anio">diciembre de 2026</span> y te libera <b>$1,200.00 al mes</b>.</p>
+            </div>
+          </div>
+          <div class="dato vidrio">
+            <span class="tile tile--teal"><svg aria-hidden="true"><use href="#i-olas"/></svg></span>
+            <div>
+              <h4>Tu mes más holgado</h4>
+              <p><span data-mes="14" data-formato="Largo-anio">Enero de 2028</span>: te quedarían <b>$11,250.00</b> después de todo.</p>
+            </div>
+          </div>
+          <div class="dato vidrio">
+            <span class="tile tile--gris"><svg aria-hidden="true"><use href="#i-calendario"/></svg></span>
+            <div>
+              <h4>Total comprometido a futuro</h4>
+              <p><b>$87,350.00</b> repartidos en los próximos 18 meses.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ EL COLOR ═══════════════════════════════════════════ -->
-  <section class="banda banda--color" id="color">
+  <!-- ═══ EL MURO ════════════════════════════════════════════ -->
+  <section class="banda banda--muro" id="muro">
     <div class="contenido">
-      <p class="ceja ceja--acento">El color</p>
-      <h2 class="titulo">Mar de noche, con una luz.</h2>
-      <p class="parrafo">
-        Azul profundo casi negro para el fondo, porque una app que se abre a las once de la noche
-        —que es cuando uno revisa cuánto debe— no debería deslumbrar. Encima, un solo verde azulado
-        para lo que importa, y un ámbar reservado para una sola cosa: el mes que se pasa.
-      </p>
+      <div class="dos dos--parejo" style="margin-top:0; align-items:center">
+        <div>
+          <p class="ceja ceja--alerta">El muro</p>
+          <h2 class="titulo">El mes en que se te juntan todas.</h2>
+          <span class="cifra-muro monto">+$950</span>
+          <p class="cifra-pie">lo que <span data-mes="4" data-formato="largo">marzo</span> se pasa de tu ingreso, contando tu colchón</p>
+          <p class="parrafo">
+            Cada compra a meses se ve chiquita por separado. El problema nunca es una: es el mes donde
+            coinciden cuatro parcialidades, la renta y el seguro del coche. Ese mes es tu muro, y hoy
+            lo descubres cuando ya llegó.
+          </p>
+          <p class="frase-comunidad">«Mi muro es en <span data-mes="4" data-formato="largo">marzo</span>»</p>
+          <p class="parrafo">
+            Node Cash te lo dice con meses de anticipación, cuando todavía puedes hacer algo: mover una
+            compra, liquidar con el aguinaldo o simplemente no comprar esa cuarta cosa a doce meses.
+          </p>
+        </div>
 
-      <div class="paleta">
-        <figure class="tono tono--fondo"><figcaption><b>Fondo profundo</b><span>#0D1321</span></figcaption></figure>
-        <figure class="tono tono--marea"><figcaption><b>Marea</b><span>#1D2D44</span></figcaption></figure>
-        <figure class="tono tono--teal"><figcaption><b>Verde Node</b><span>#00A896</span></figcaption></figure>
-        <figure class="tono tono--tinta"><figcaption><b>Tinta</b><span>#F2F5FA</span></figcaption></figure>
-        <figure class="tono tono--ambar"><figcaption><b>Ámbar del muro</b><span>#FFA92E</span></figcaption></figure>
-      </div>
-
-      <p class="parrafo-chico parrafo--ancho">
-        Y un color por tarjeta, el que tú le pongas, para reconocerla dentro de la curva sin leer
-        nombres. Nunca se pinta la tarjeta entera de ese color: solo una franja y un tinte, porque
-        el color es para distinguir, no para decorar.
-      </p>
-      <div class="tarjetas-tira" aria-hidden="true">
-        <span style="background:#52A5EB"></span>
-        <span style="background:#FF5A5F"></span>
-        <span style="background:#BE6EF5"></span>
-        <span style="background:#E8735C"></span>
-        <span style="background:#E8D97A"></span>
-        <span style="background:#7A9D4F"></span>
-        <span style="background:#E0629E"></span>
-        <span style="background:#4A4750"></span>
-        <span style="background:#9B9B9B"></span>
+        <!-- Desglose de un mes que rebasa, recreado con datos de ejemplo. -->
+        <div class="desglose-card vidrio" data-revelar aria-hidden="true">
+          <p class="tit"><span data-mes="4" data-formato="Largo-anio">Marzo de 2027</span></p>
+          <p class="queda">Te falta<span class="monto">$950<small>.00</small></span></p>
+          <p class="formula">$22,000 – $20,950 comprometido – $2,000 colchón</p>
+          <div class="barra-desglose">
+            <div class="tel-barra">
+              <i style="width:38.1%; background:var(--c-fijos)"></i>
+              <i style="width:18.3%; background:var(--c-plazo)"></i>
+              <i style="width:16.1%; background:var(--c-azul)"></i>
+              <i style="width:10.5%; background:var(--c-rojo)"></i>
+              <i style="width:8.3%; background:var(--c-morado)"></i>
+              <i style="width:8.7%; background:rgba(255,255,255,.18)"></i>
+            </div>
+            <span class="pasado"></span>
+            <span class="marca-ingreso"></span>
+          </div>
+          <div class="barra-desglose-pie"><span>$0</span><span>Ingreso confiable $22,000</span></div>
+          <div class="renglones">
+            <div class="renglon raya"><span>Ingreso confiable</span><b class="monto verde">+$22,000<small>.00</small></b></div>
+            <div class="renglon" style="--c:var(--c-fijos)"><span>Gastos fijos</span><b class="monto">$8,750<small>.00</small></b></div>
+            <div class="renglon" style="--c:var(--c-plazo)"><span>Crédito automotriz</span><b class="monto">$4,200<small>.00</small></b></div>
+            <div class="renglon" style="--c:var(--c-azul)"><span>Tarjetas</span><b class="monto">$8,000<small>.00</small></b></div>
+            <div class="renglon total"><span>Te falta</span><b class="monto">$950<small>.00</small></b></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ CÓMO HABLA ═════════════════════════════════════════ -->
-  <section class="banda" id="voz">
+  <!-- ═══ AVISOS ═════════════════════════════════════════════ -->
+  <section class="banda" id="avisos">
     <div class="contenido">
-      <p class="ceja ceja--acento">Cómo habla</p>
-      <h2 class="titulo">Te dice el número. No te dice qué hacer con tu vida.</h2>
-
-      <div class="voz-par">
-        <blockquote class="dice dice--si">
-          <p class="dice-frase">«Octubre rebasa tu ingreso por $950»</p>
-          <p class="dice-nota">Un hecho, con su cantidad y su mes. Tú decides.</p>
-        </blockquote>
-        <blockquote class="dice dice--no">
-          <p class="dice-frase">«Cuidado con tus gastos»</p>
-          <p class="dice-nota">Regaña, no aporta ningún dato y no ayuda a decidir nada.</p>
-        </blockquote>
+      <div class="cabeza">
+        <p class="ceja ceja--acento">Avisos</p>
+        <h2 class="titulo">Te avisa antes del corte, no después.</h2>
+        <p class="parrafo">
+          Fechas de corte y de pago de cada tarjeta, con los días inhábiles de México. Si un pago se te
+          pasa lo ves en naranja, y si ya pagaste una parte, sabes exactamente cuánto falta y de qué.
+        </p>
       </div>
 
-      <p class="parrafo parrafo--ancho">
-        Comprar a meses no es el enemigo: no ver lo que ya compraste, sí. Node Cash hace cuentas, no
-        recomendaciones de inversión, y no te va a decir que dejes de gastar. Te enseña el mes y se
-        calla.
-      </p>
+      <div class="dos dos--parejo" aria-hidden="true">
+        <!-- Pantalla Avisos, recreada con datos de ejemplo. -->
+        <div class="pila-avisos" data-revelar>
+          <div>
+            <p class="lista-grupo lista-grupo--ambar">Atrasado</p>
+            <div class="lista vidrio lista--alerta">
+              <div class="fila">
+                <span class="color-tarjeta ct-azul"></span>
+                <div class="fila-txt"><b>Clásica</b><span>Pago · venció hace 5 días</span></div>
+                <span class="monto">$500<small>.00</small></span><span class="fila-flecha">›</span>
+              </div>
+              <div class="fila">
+                <span class="color-tarjeta ct-coral"></span>
+                <div class="fila-txt"><b>Departamental</b><span>Pago · venció hace 5 días</span></div>
+                <span class="monto">$850<small>.00</small></span><span class="fila-flecha">›</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="lista-grupo">Próximos 7 días</p>
+            <div class="lista vidrio">
+              <div class="fila">
+                <span class="color-tarjeta ct-coral"></span>
+                <div class="fila-txt"><b>Departamental</b><span>Corte · en 4 días</span></div>
+                <svg><use href="#i-reloj"/></svg><span class="fila-flecha">›</span>
+              </div>
+              <div class="fila">
+                <span class="color-tarjeta ct-rojo"></span>
+                <div class="fila-txt"><b>Platino</b><span>Corte · en 5 días</span></div>
+                <svg><use href="#i-reloj"/></svg><span class="fila-flecha">›</span>
+              </div>
+            </div>
+          </div>
+          <p class="parrafo-chico">El color del chip es tu tarjeta. El naranja solo significa “requiere atención”.</p>
+        </div>
+
+        <!-- Detalle de tarjeta: pendiente de pago. -->
+        <div class="pendiente vidrio" data-revelar>
+          <div class="pendiente-arriba">
+            <div><h3>Pendiente de pago</h3><p>Corte del día 5</p></div>
+            <span class="chip chip--ambar"><svg><use href="#i-alerta"/></svg>Venció hace 5 días</span>
+          </div>
+          <span class="monto monto--grande">$500<small>.00</small></span>
+          <p class="pendiente-sub">Ya cubriste $2,500 de $3,000</p>
+          <ul class="checklist">
+            <li class="hecho"><span class="check check--ok"><svg><use href="#i-check"/></svg></span><div><b>Refrigerador</b><span>Parcialidad 3 de 12</span></div><span class="monto">$1,000</span></li>
+            <li class="hecho"><span class="check check--ok"><svg><use href="#i-check"/></svg></span><div><b>Colchón nuevo</b><span>Parcialidad 1 de 3</span></div><span class="monto">$1,500</span></li>
+            <li><span class="check"></span><div><b>Internet</b><span>Domiciliado</span></div><span class="monto">$500</span></li>
+          </ul>
+          <p class="boton-falso">Marcar todo como pagado</p>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- ═══ BETA ═══════════════════════════════════════════════
+       Mientras la app esté en TestFlight, este bloque invita a la beta.
+       Cuando salga en el App Store, se vuelve el botón oficial de descarga. -->
+  <section class="banda banda--beta" id="beta">
+    <div class="contenido contenido--angosto" style="max-width:920px">
+      <div class="beta vidrio">
+        <span class="ficha ficha--grande sombra"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
+        <p class="ceja ceja--acento">Beta pública</p>
+        <h2 class="titulo">Ya puedes probarla.</h2>
+        <p class="parrafo">
+          Node Cash está en beta pública en TestFlight, el programa de pruebas de Apple. Es gratis y
+          cualquiera con iPhone puede entrar. La versión final llegará al App Store.
+        </p>
 
-  <!-- ═══ MUY PRONTO ═══════════════════════════════════════════
-       Cuando la app esté publicada, este bloque se vuelve el botón
-       oficial de descarga (y los dos botones de arriba apuntan aquí). -->
-  <section class="banda banda--pronto" id="pronto">
-    <div class="contenido contenido--angosto">
-      <span class="ficha ficha--grande sombra"><svg viewBox="0 0 1024 1024" aria-hidden="true"><use href="#marca"/></svg></span>
-      <h2 class="titulo">Muy pronto en el App&nbsp;Store.</h2>
-      <p class="parrafo">
-        Node Cash está en sus últimos ajustes. Cuando esté lista para descargar, la vas a encontrar
-        en el App Store de tu iPhone como <b>Node Cash</b>, y aquí mismo aparecerá el enlace.
-      </p>
+        <div class="beta-cta">
+          <a class="boton" href="https://testflight.apple.com/join/rabx4By2" data-testflight>
+            <svg aria-hidden="true"><use href="#i-descarga"/></svg>Probar la beta en TestFlight
+          </a>
+          <div class="qr vidrio" aria-hidden="true">
+            <span class="qr-codigo"><svg viewBox="0 0 29 29"><path stroke="#0A0F1A" d="M0 0.5h7m1 0h1m3 0h1m3 0h5m1 0h7m-29 1h1m5 0h1m1 0h2m2 0h3m1 0h3m1 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h5m2 0h1m2 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h3m1 0h1m2 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h2m2 0h1m1 0h3m1 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m2 0h1m3 0h1m2 0h1m1 0h2m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-21 1h1m2 0h1m2 0h2m1 0h2m1 0h1m-21 1h1m1 0h2m1 0h3m1 0h1m1 0h2m4 0h1m1 0h2m1 0h1m2 0h1m1 0h2m-27 1h1m2 0h1m1 0h1m2 0h1m3 0h1m1 0h9m3 0h1m-26 1h8m1 0h1m3 0h1m1 0h1m2 0h1m1 0h1m2 0h2m-25 1h1m1 0h1m5 0h3m1 0h1m3 0h1m3 0h1m4 0h1m-28 1h1m1 0h2m1 0h2m1 0h2m3 0h1m2 0h1m5 0h1m1 0h2m-27 1h1m2 0h2m3 0h4m2 0h2m1 0h1m1 0h1m2 0h1m3 0h3m-27 1h1m3 0h1m1 0h1m7 0h2m1 0h1m1 0h1m1 0h2m1 0h3m-29 1h2m1 0h2m2 0h1m1 0h2m5 0h1m2 0h3m2 0h1m2 0h1m-28 1h1m1 0h6m3 0h1m1 0h1m1 0h1m2 0h4m2 0h2m1 0h1m-27 1h5m2 0h1m2 0h2m1 0h2m1 0h1m5 0h1m1 0h3m-28 1h1m2 0h4m1 0h3m1 0h1m2 0h3m3 0h4m1 0h1m-25 1h1m1 0h1m3 0h2m1 0h1m5 0h2m2 0h1m4 0h1m-26 1h1m1 0h2m1 0h1m2 0h2m1 0h1m2 0h12m-19 1h5m1 0h1m1 0h5m3 0h5m-29 1h7m1 0h1m2 0h1m1 0h2m1 0h5m1 0h1m1 0h2m1 0h1m-28 1h1m5 0h1m1 0h3m2 0h1m1 0h1m2 0h1m1 0h1m3 0h2m-26 1h1m1 0h3m1 0h1m3 0h3m4 0h2m1 0h5m1 0h3m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h3m1 0h3m3 0h2m1 0h3m2 0h1m-29 1h1m1 0h3m1 0h1m1 0h4m2 0h1m1 0h5m2 0h1m2 0h1m1 0h1m-29 1h1m5 0h1m3 0h3m7 0h1m3 0h2m1 0h1m-28 1h7m1 0h2m1 0h1m1 0h1m1 0h1m2 0h5m2 0h1m1 0h1"/></svg></span>
+            <span class="qr-txt"><b>Desde tu iPhone</b>apunta la cámara aquí</span>
+          </div>
+        </div>
+
+        <ol class="pasos">
+          <li><b>Instala TestFlight</b> desde el App Store. Es la app de Apple para probar apps antes de que salgan.</li>
+          <li><b>Abre el enlace desde tu iPhone</b> (o escanea el código) y toca <b>Aceptar</b>.</li>
+          <li><b>Toca Instalar.</b> Node Cash aparece en tu pantalla de inicio como cualquier otra app.</li>
+        </ol>
+
+        <p class="beta-nota">
+          Es una beta: puede tener detalles. Si algo falla o se te ocurre una mejora, mándalo desde
+          TestFlight o escríbenos a <a href="mailto:soporte@nodecash.com.mx">soporte@nodecash.com.mx</a>.
+        </p>
+      </div>
 
       <ul class="promesas">
-        <li><b>No pide tus datos del banco.</b> Nunca se conecta a tu cuenta: tú capturas lo que quieres seguir.</li>
-        <li><b>Tus datos son tuyos.</b> Viven en tu iPhone y, si usas iCloud, en tu espacio privado de iCloud. No tenemos servidores, y ni nosotros podemos verlos.</li>
-        <li><b>Hecha para México.</b> Meses sin intereses, fechas de corte y días festivos de aquí.</li>
+        <li class="vidrio"><span class="tile"><svg aria-hidden="true"><use href="#i-candado"/></svg></span><b>No pide tus datos del banco.</b>Nunca se conecta a tu cuenta: tú capturas lo que quieres seguir.</li>
+        <li class="vidrio"><span class="tile"><svg aria-hidden="true"><use href="#i-nube"/></svg></span><b>Tus datos son tuyos.</b>Viven en tu iPhone y, si usas iCloud, en tu espacio privado. No tenemos servidores: ni nosotros podemos verlos.</li>
+        <li class="vidrio"><span class="tile"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><b>Hecha para México.</b>Meses sin intereses, fechas de corte y días festivos de aquí.</li>
       </ul>
     </div>
   </section>

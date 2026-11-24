@@ -22,6 +22,11 @@
 .legal-indice ol{margin:12px 0 0; padding-left:22px; color:var(--tinta-2); font-size:15px; line-height:1.9}
 .legal-indice a{color:var(--tinta-2); text-decoration:none; border-bottom:1px solid var(--linea-tenue)}
 .legal-indice a:hover{color:var(--tinta)}
+.legal-indice ol + .ceja{margin-top:26px}
+
+/* Separador de temas en la página de soporte. */
+.legal-grupo{margin:84px 0 0; padding-top:22px; border-top:1px solid var(--borde)}
+.legal-grupo + .legal-seccion{margin-top:4px}
 
 .legal-seccion{margin-top:52px; scroll-margin-top:96px}
 .legal-seccion h2{font-size:clamp(21px,2.4vw,26px); letter-spacing:-.022em; line-height:1.25}
@@ -33,5 +38,6 @@
 .legal-seccion ul,
 .legal-seccion ol{margin-top:14px; padding-left:22px}
 .legal-seccion ul{list-style:disc}
+.legal-seccion ol{list-style:decimal}
 .legal-seccion li + li{margin-top:8px}
 .legal-seccion li::marker{color:var(--teal-vivo)}
